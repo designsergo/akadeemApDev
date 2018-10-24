@@ -958,7 +958,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     float: left;
   }
   .row-table .table-cell.short-description .register{
-    /* Asko 23.10*/
+    /*Asko 23.10*/
     width: 125px;
     height: 30px;  
     border-radius: 2px;  
@@ -975,7 +975,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     padding: 1px;
   }
   .row-table .table-cell.short-description .info{
-    /* Asko 23.10*/
+    /*Asko 23.10*/
     width: 125px;
     height: 30px;  
     border-radius: 2px;  
@@ -1246,7 +1246,7 @@ footer,footer a{
      .row-trainers-page .trainer .img{width:100%;margin-bottom:0}
      .row-trainers-page .trainer p{
        font-size:26px;
-       font-weight:medium; /* Asko  23.10 */
+       font-weight:medium; /*Asko  23.10*/
        margin:0;
        white-space:nowrap;
      }
