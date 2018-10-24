@@ -42,7 +42,7 @@
 				<div class="table-cell date asc active ">Kuupäev <span class="ap-table-order"></span></div>
 				<div class="table-cell title asc">Tutvustus <span class="ap-table-order"></span></div>
 				<div class="table-cell duration asc hidden-xs">Kestus <!--<span class="ap-table-order"></span>--></div>
-				<div class="table-cell trainer asc hidden-xs">Koolitaja</div>
+				<div class="table-cell trainer asc hidden-xs">Koolitaja <!--<span class="ap-table-order"></span>--></div>
 				<div class="table-cell more hidden-xs"></div>
 			</div>
 
