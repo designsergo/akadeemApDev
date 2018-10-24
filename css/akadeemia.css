@@ -955,6 +955,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   .row-table .table-cell.short-description{
     margin-left: 110px;
     font-size: 13px;
+    padding-left: 60px;
   }
   .row-table .table-cell.short-description .button{
     border-radius: 1px;
