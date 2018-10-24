@@ -73,7 +73,7 @@
   .col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-7{margin-left:58.33333333%}
   .col-sm-offset-6{margin-left:50%}.col-sm-offset-5{margin-left:41.66666667%}
   .col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-3{margin-left:25%}
-  .col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-1{margin-left:8.33333333%}
+  .col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-1{margin-left:8.33333333%; margin-right:8.33333333%}
   .col-sm-offset-0{margin-left:0}
 }
 
@@ -244,7 +244,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
    position:relative;
    outline:0;
    border-radius: 2px;
-   background-color: #fefefe;
+   background-color: #FEFEFE;
    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
   }
  .modal-backdrop{position:fixed;z-index:1040;background-color:#000}
@@ -456,6 +456,20 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
 
  #trainer-footer {
    padding: 30px 50px 30px 50px;
+   width: 718px;
+   height: 23px; 
+   font-family: Roboto; 
+   font-size: 16px; 
+   font-weight: 300; 
+   font-style: normal; 
+   font-stretch: normal; 
+   line-height: normal; 
+   letter-spacing: normal; 
+   color: #8a8a8a;
+ }
+
+ .trainer-footer span a:active, a:focus, a{
+  color: #8a8a8a;
  }
  .site-search {
     width: 875px;
@@ -685,12 +699,10 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  .page-nav-text{
    display:inline-block;
    font-size:16px;
-   font-weight: 600;
+   font-weight: 500;
  }
  .page-nav-text span{vertical-align:baseline!important;font-size:18px!important}
  .page-nav-text i{
-   font-size:12px;
-   font-weight: 400;
    margin-right: 5px;
  }
  .page-nav-text.next{margin-left:6px}
@@ -908,11 +920,14 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     width:100%;*/
     display: inline-block;
     width: 200px;
-    //padding:0 30px 0 15px;
-    font-size: 16px;
+    /* //padding:0 30px 0 15px; */
+    font-size: 18px;
     line-height: 22px;
     font-weight: 500;
   }
+  .row-table .table-cell.title p{
+    font-size: 13px;
+   }
   .row-table .table-cell.duration {
     font-size: 18px; /*Sergei 23.10*/
     line-height: 22px;
@@ -940,6 +955,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   .row-table .table-cell.short-description{
     margin-left: 110px;
     font-size: 13px;
+    padding-left: 60px;
   }
   .row-table .table-cell.short-description .button{
     border-radius: 1px;
@@ -958,7 +974,6 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     float: left;
   }
   .row-table .table-cell.short-description .register{
-    /* Asko 23.10*/
     width: 125px;
     height: 30px;  
     border-radius: 2px;  
@@ -975,7 +990,6 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     padding: 1px;
   }
   .row-table .table-cell.short-description .info{
-    /* Asko 23.10*/
     width: 125px;
     height: 30px;  
     border-radius: 2px;  
@@ -1246,17 +1260,17 @@ footer,footer a{
      .row-trainers-page .trainer .img{width:100%;margin-bottom:0}
      .row-trainers-page .trainer p{
        font-size:26px;
-       font-weight:medium; /* Asko  23.10 */
+       font-weight:medium;
        margin:0;
        white-space:nowrap;
      }
      .row-trainers-page .trainer:nth-child(odd){float:none}.row-trainers-details .portrait{position:fixed;top:0;bottom:0;left:150px;width:520px;height:auto;overflow:hidden;margin:0}.row-trainers-details .info{margin-left:670px;padding:0}
      .row-trainers-details .info .details {
-       background:#fefefe;
+       background:#FEFEFE;
        padding:50px 0 55px 60px
      }
      .row-trainers-details .info .details-header {
-       background:#fefefe;
+       background:#FEFEFE;
        padding:10px 0 10px 60px;
        border-bottom: 1px solid #e9e9e9;
      }

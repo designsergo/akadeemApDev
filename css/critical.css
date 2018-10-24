@@ -19,7 +19,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-color: #fefefe;
 }
 header,
 nav {
@@ -222,7 +222,7 @@ html {
   min-height: 100%;
 }
 body {
-  background: #fff;
+  background: #fefefe;
   overflow-x: hidden;
   font-family: Exo, sans-serif;
   margin-bottom: 43px;
