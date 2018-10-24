@@ -904,10 +904,10 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
 
     //padding:15px 0 0 15px;
     /*white-space:nowrap;*/
-    font-size: 16px;
     line-height: 22px;
     font-weight: 500;
   }
+  
   .row-table .table-header .date{
     width: 49%;
     padding: 0 15px 0 15px;
@@ -929,7 +929,6 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     font-size: 13px;
    }
   .row-table .table-cell.duration {
-    font-size: 18px; /*Sergei 23.10*/
     line-height: 22px;
     font-weight: 500;
   }
@@ -938,7 +937,6 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   }
   .row-table .table-cell.trainer{
     position:absolute;top:15px;right:15px;
-    font-size: 18px;
     line-height: 22px;
     font-weight: 500;
   }
@@ -1202,7 +1200,7 @@ footer,footer a{
        font-size:46px;
        font-weight:300;
      }
-     .row-table{font-size:14px}.row-table .table-header{font-weight:600;padding:25px 0}
+     .row-table{font-size:16px}.row-table .table-header{font-weight:600;padding:25px 0}
      .row-table .table-cell{
        //vertical-align:middle;
        display:inline-block;
