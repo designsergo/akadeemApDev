@@ -1023,7 +1023,6 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   }
   .row-table .table-cell.short-description .button{
     border-radius: 1px;
-
     margin:0 auto;
     width:174px;
     text-align:center;
@@ -1033,9 +1032,9 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     font-size: 13px;
     font-weight:500;
     display:block;
-    margin: 10px 30px 15px 0px;
     border-radius: 2px;
     float: left;
+    margin: 10px 30px 15px 0px;
   }
   .row-table .table-cell.short-description .register{
     width: 125px;
