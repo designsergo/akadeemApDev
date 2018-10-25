@@ -24,7 +24,7 @@ $themeUri = get_stylesheet_directory_uri();
 								<dir class="contact-container">
 									<p class="name"><? the_title() ?></p>
 									<p class="title"><?= get_post_meta( get_the_ID(), 'meta_title', true ) ?></p>
-									<p class="telephone"><span>tel:</span> <?= get_post_meta( get_the_ID(), 'meta_phone', true ) ?></span></p>
+									<p class="telephone"><span>tel:</span> <a href="tel:<?=get_post_meta( get_the_ID(), 'meta_phone', true) ?>"><?= get_post_meta( get_the_ID(), 'meta_phone', true ) ?></a></p>
 									<p class="email"><span>e-post:</span> <a href="mailto:<?= get_post_meta( get_the_ID(), 'meta_email', true ) ?>"><?= get_post_meta( get_the_ID(), 'meta_email', true ) ?></a></p>
 								</dir>
 						</div><?php
