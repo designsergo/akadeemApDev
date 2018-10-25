@@ -952,7 +952,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   }
   .row-table .table-cell h3{
     font-size:16px;
-    //margin:10px 0 3px;
+    /* //margin:10px 0 3px; */
     margin:0px 0 3px;
   }
   .row-table .table-cell .ap-table-order {
@@ -962,7 +962,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   .row-table .table-cell.date{
     /*width:49%;*/
 
-    //padding:15px 0 0 15px;
+    /* //padding:15px 0 0 15px; */
     /*white-space:nowrap;*/
     line-height: 22px;
     font-weight: 500;
