@@ -550,6 +550,20 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
    text-align: center;
  }
 
+ .site-search-category{
+  width: 186px;
+  height: 35px;
+  border-radius: 1px;
+  box-shadow: 0 0 4px 0 #9f9a97;
+  border: solid 2px #ffffff;
+  background-color: #fdfdfd;
+  margin: 0px 20px 65px 20px;
+}
+.site-search-category_holder{
+  content-align: center;
+
+}
+
  @media (min-width: 768px) {
   .modal-dialog{
     width: 600px;
