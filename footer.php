@@ -4,7 +4,7 @@
 				<div class="col-sm-12 col-custom-offset">
 					<div id="footer-text">
 						<!--<p>AS Äripäev<span class="slash">/</span><span class="hidden-xs"><span class="hidden-sm">Vana-L&otilde;una 39/1, 19094 Tallinn<span class="slash">/</span></span>e-post: <a href="mailto:akadeemia@aripaev.ee">akadeemia@aripaev.ee</a><span class="slash">/</span></span>telefon: 667 0439</p>-->
-					  <p>AS Äripäev<span class="slash">/</span><span><span>Vana-L&otilde;una 39/1, 19094 Tallinn<span class="slash">/</span></span>e-post: <a href="mailto:akadeemia@aripaev.ee">akadeemia@aripaev.ee</a><span class="slash">/</span></span><a href="tel:(+372) 667 0439">telefon: 667 0439</a></p>
+					  <p>AS Äripäev<span class="slash">/</span><span><span>Vana-L&otilde;una 39/1, 19094 Tallinn<span class="slash">/</span></span>e-post: <a href="mailto:akadeemia@aripaev.ee">akadeemia@aripaev.ee</a><span class="slash">/</span>telefon: </span><a href="tel:(+372) 667 0439">667 0439</a></p>
 					</div>
 				</div>
 			</div>
