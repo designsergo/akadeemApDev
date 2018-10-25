@@ -37,6 +37,9 @@
     font-size: 18px;
     display: none!important;
   }
+  .product-categories {
+    display: none !important;
+  }
   .row-table .table-cell.title{
     width:60.33% !important;
  }
@@ -645,6 +648,10 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  @media (max-width:992px){
    .hidden-xs{display:none!important;
     font-size: 18px; /*Sergei 23.10*/}
+    
+  .product-categories {
+    display: none !important;
+  }
  }
  @media (max-width:720px){
    .site-search {

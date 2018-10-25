@@ -150,6 +150,9 @@ header nav {
     font-size: 18; /*Sergei 23.10*/
     display: none !important;
   }
+  .product-categories {
+    display: none !important;
+  }
 }
 @font-face {
   font-family: Exo;
