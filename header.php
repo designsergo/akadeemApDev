@@ -14,7 +14,7 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="<?= get_stylesheet_directory_uri(); ?>/img/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="120x120" href="<?= get_stylesheet_directory_uri(); ?>/img/apple-touch-icon-120x120.png">
 	<link rel="apple-touch-icon" sizes="152x152" href="<?= get_stylesheet_directory_uri(); ?>/img/apple-touch-icon-152x152.png">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 	<meta name="format-detection" content="telephone=no">
 	<?php wp_meta(); ?>
 	<?php wp_head(); ?>
