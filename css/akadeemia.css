@@ -561,8 +561,24 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
 }
 .site-search-category_holder{
   content-align: center;
-
 }
+.product-categories{
+    width: 125px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: #57897c;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.15;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    padding: 1px;
+}
+
 
  @media (min-width: 768px) {
   .modal-dialog{
