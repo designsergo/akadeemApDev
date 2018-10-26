@@ -260,7 +260,7 @@ header h1 {
 }
 header nav {
   display: none;
-  background: #d92027;
+  background: #a71617;
   right: 0;
   bottom: 0;
   z-index: 99;
@@ -437,7 +437,7 @@ header .search span:nth-child(2) {
   background: #656d70;
 }
 .row-table .table-row.placeholder .more span {
-  background: #ed1b2f;
+  background: #a71617;
 }
 .row-table .table-cell {
   display: inline-block;
@@ -566,7 +566,7 @@ header .search span:nth-child(2) {
     width: 30px;
   }
   header.vertical .bg-slant {
-    background: #d92027;
+    background: #a71617;
     width: 600px;
     -webkit-transform: none;
     -moz-transform: none;
