@@ -145,7 +145,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
    .table-responsive>.table-bordered>tbody>tr:last-child>td,.table-responsive>.table-bordered>tbody>tr:last-child>th,.table-responsive>.table-bordered>tfoot>tr:last-child>td,.table-responsive>.table-bordered>tfoot>tr:last-child>th{border-bottom:0};
  
    .row-table .table-cell.title{width:60.33%;}
-   .row-table .table-cell.short-description {margin-left: 110px !important;} 
+   .row-table .table-cell.short-description {margin-left: 0px !important;} 
   }
 
  fieldset,legend{padding:0;border:0}fieldset{min-width:0;margin:0}legend{width:100%;margin-bottom:20px;font-size:21px;line-height:inherit;border-bottom:1px solid #e5e5e5}label{display:inline-block;max-width:100%;margin-bottom:5px}input[type=search]{-moz-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none}input[type=checkbox],input[type=radio]{margin:4px 0 0;margin-top:1px\9;line-height:normal}
@@ -584,6 +584,19 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   text-transform: uppercase;
 }
 
+/* .site-search-date_holder {
+  align-content: center;
+}
+.site-search-date {
+  width: 186px;
+  height: 35px;
+  border-radius: 1px;
+  box-shadow: 0 0 4px 0 #9f9a97;
+  border: solid 2px #ffffff;
+  background-color: #fdfdfd;
+  margin: 0px 20px 65px 20px;
+  font-family: Roboto;
+} */
 
  @media (min-width: 768px) {
   .modal-dialog{
@@ -1507,7 +1520,7 @@ footer,footer a{
 
 @media (min-width:768px) and (max-width:1470px)
 {
-   .row-intro{padding-left:100px}
+   /* .row-intro{padding-left:100px} */
 }
 
 .row-contact-page{margin-bottom:150px}
@@ -1578,9 +1591,34 @@ footer,footer a{
   .row-intro {
     margin-top: 70px;
   }
+  .row-intro h2 {
+    font-size:26px;
+    line-height: 1.38;
+  }
+  .row-intro p {
+    height:100%;
+    font-size:14px;
+  }
+  .site-search {
+    font-size:14px;
+  }
   .row-table .table-header .date{
     width: 49%;
     padding: 15px;
+  }
+  .row-table .table-header {
+    font-size: 14px;
+  }
+  .row-table .table-cell.title {    
+    font-size: 14px;
+  }
+  .row-table .table-cell.short-description .register {
+    margin-left:8px;
+    margin-right:8px;
+  }
+  .row-table .table-cell.short-description .info {
+    margin-left:8px;
+    margin-right:8px;
   }
 }
 

@@ -147,7 +147,7 @@ header nav {
     display: block !important;
   }
   .hidden-xs {
-    font-size: 18; /*Sergei 23.10*/
+    font-size: 18;
     display: none !important;
   }
   .product-categories {
