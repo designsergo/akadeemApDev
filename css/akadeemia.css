@@ -815,7 +815,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
    -ms-touch-action:none;touch-action:none
  }
  header .burger span{
-   //background:#323232;
+   /* background:#323232; */
    background: #ffffff;
    display:block;height:4px;
    position:absolute;left:20px;width:33px;border-radius:2px;
@@ -1164,7 +1164,7 @@ footer,footer a{
 .row-trainers-details .upcoming-box .upcoming .event .trainer{font-size:13px}
 .row-trainers-details .upcoming-box .upcoming .event .trainer strong{font-size:16px}
 .row-trainers-details .upcoming-box .upcoming .event .button {
-  //background:#d92027;
+  /* //background:#d92027; */
   border-radius: 1px;
   background-color: #57897c;
   box-shadow: 0 0 4px 0 rgba(138, 138, 138, 0.5);
