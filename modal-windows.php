@@ -15,11 +15,18 @@
           </span>
         </p>
         <form class="form--newsletter" method="post" id="send-newsletter" data-subdomain="apakadeemia">
+
+        <input id="newsletter-name" type="text" class="input" placeholder="Nimi" name="newsletter-name">
+          <div id="newsletter-error" class="error"></div>
+
+          <hr class="modal-window-hr">
+
           <input type="hidden" value="" name="secretkey">
           <input id="newsletter-email" type="text" class="input" placeholder="E-post" name="newsletter-email">
-          <input id="newsletter-name" type="text" class="input" placeholder="Nimi" name="newsletter-name">
-          <div id="newsletter-error" class="error"></div>
-          <input class="button button--sm" type="submit" value="LIITU UUDISKIRJAGA" name="Submit">
+          
+        <hr class="modal-window-hr">
+          
+     <input class="button button--sm" type="submit" value="LIITU UUDISKIRJAGA" name="Submit">
         </form>
         <div class="loading-overlay">
           <div class="spinner"></div>
