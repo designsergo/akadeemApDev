@@ -106,9 +106,30 @@
 			}
 
 			if ( 0 == $trainingsCount ) {
-				echo '<p>
-					Hetkel tulevased koolitused puuduvad
-				</p>';
+
+				echo '<div id="trainer-sendMail">' ;
+
+					echo '<p class="sendmail_intro">
+						Hetkel koolitusi kalendris ei ole. Kui tunned huvi '; ?>
+						<? the_title(); ?>
+						<? echo ' koolituse või
+							sarnase teema vastu, siis anna meile sellest teda ja me võtame Sinuga ühendust.
+					</p>';
+					echo '<form class="form--sendMail" method="post" id="send-mail" >
+	          <input id="sendmail-email" type="text" class="input"
+							placeholder="Soovin infot tulevaste koolituse kohta" name="newsletter-email">
+	          <hr class="sendmail-hr">
+	          <div id="sendmail-error" class="sendmail-error"></div>
+	          <input class="button button--sm" type="submit" value="LIITU UUDISKIRJAGA" name="Submit">
+	        </form>';
+
+					echo '<span class="sendmail_thanks">
+	            Tänan, et meile oma soovist teada andsid! Võtame Sinuga esimesel võimalusel ühendust.
+	          </span>';
+
+				echo '</div>';
+
+
 			}
 
 			echo '</div>'; //class="events"

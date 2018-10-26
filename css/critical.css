@@ -147,7 +147,7 @@ header nav {
     display: block !important;
   }
   .hidden-xs {
-    font-size: 18; /*Sergei 23.10*/
+    font-size: 18;
     display: none !important;
   }
   .product-categories {
@@ -382,7 +382,7 @@ header .search span:nth-child(2) {
 .row-table .table-header {
   position: relative;
   text-transform: uppercase;
-  background: #af1f24;
+  background: #a71617;
   font-size: 14px;
   color: #fff;
   z-index: 3;

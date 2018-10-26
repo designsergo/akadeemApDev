@@ -14,7 +14,7 @@
 					setup_postdata( $page );
 
 					echo '<h2>'.get_the_title().'</h2>';
-					echo '<p class="hidden-xs">'.get_the_content().'</p>';
+					echo '<p>'.get_the_content().'</p>';
 				}
 
 				wp_reset_postdata();
@@ -32,7 +32,18 @@
 				<!--<input type="submit" class="btn-site-search" value="Otsi">-->
 				<span class="btn-site-search-span"></span>
 				<hr class="site-search-hr">
+				<div class="site-search-category_holder" id="site-search-category_holder">
+					<select name="site-search-category" class="site-search-category" id="site-search-category">
+						<option value="-">Vali kategooria</option>
+					</select>
+				</div>
+				<div class="site-search-date_holder" id="site-search-date_holder">
+					<select name="site-search-date" class="site-search-date" id="site-search-date">
+						<option value="-">Vali ajavahemik</option>
+					</select>
+					<input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
 
+				</div>
 		</div>
 	</div>
 
@@ -42,7 +53,7 @@
 				<div class="table-cell date asc active ">Kuupäev <span class="ap-table-order"></span></div>
 				<div class="table-cell title asc">Tutvustus <span class="ap-table-order"></span></div>
 				<div class="table-cell duration asc hidden-xs">Kestus <!--<span class="ap-table-order"></span>--></div>
-				<div class="table-cell trainer asc hidden-xs">Koolitaja <!--<span class="ap-table-order"></span>--></div>
+				<div class="table-cell trainer asc hidden-xs">Koolitaja</div>
 				<div class="table-cell more hidden-xs"></div>
 			</div>
 
