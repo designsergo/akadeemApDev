@@ -41,7 +41,7 @@
     display: none !important;
   }
   .row-table .table-cell.title{
-    width:60.33% !important;
+    width:60.33%;
  }
  .row-table .table-cell.short-description {
   margin-left: 29.02% !important;
@@ -1269,7 +1269,11 @@ footer,footer a{
        font-size:46px;
        font-weight:300;
      }
-     .row-table{font-size:16px}.row-table .table-header{font-weight:600;padding:25px 0px 5px 0px}
+     .row-table{font-size:16px}.row-table .table-header{
+       font-weight:600;
+       padding:20px 0px 5px 0px;
+       height:60px;
+      }
      .row-table .table-cell{
        //vertical-align:middle;
        display:inline-block;
