@@ -17,6 +17,7 @@
         <form class="form--newsletter" method="post" id="send-newsletter" data-subdomain="apakadeemia">
           <input type="hidden" value="" name="secretkey">
           <input id="newsletter-email" type="text" class="input" placeholder="E-post" name="newsletter-email">
+          <hr class="modal-window-hr">
           <input id="newsletter-name" type="text" class="input" placeholder="Nimi" name="newsletter-name">
           <div id="newsletter-error" class="error"></div>
           <input class="button button--sm" type="submit" value="LIITU UUDISKIRJAGA" name="Submit">

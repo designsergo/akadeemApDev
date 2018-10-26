@@ -61,12 +61,17 @@ function ak_scripts_styles() {
 	wp_enqueue_script('jquery-js', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', array(), null, true);
 	wp_enqueue_script('jquery-mobile-js', get_template_directory_uri().'/js/lib/jquery.mobile.custom.min.js', array('jquery-js'), null, true); // v 1.4.5
 	wp_enqueue_script('akadeemia-js', get_template_directory_uri().'/js/akadeemia.js', array('jquery-mobile-js'), md5_file(get_template_directory_uri().'/js/akadeemia.js'), true);
+
+	wp_enqueue_script('moment-js', 'https://cdn.jsdelivr.net/momentjs/latest/moment.min.js', array(), null, true);
+	wp_enqueue_script('daterangepicker-js', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'ak_scripts_styles');
 
 function ak_add_footer_styles() {
 	// CSS - enqueue in footer since we have critical CSS in the head
 	wp_enqueue_style('akadeemia', get_template_directory_uri().'/css/akadeemia.css', array(), md5_file(get_template_directory_uri().'/css/akadeemia.css'));
+
+	//wp_enqueue_script('daterangepicker-css', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css', array(), null, true);
 };
 add_action('get_footer', 'ak_add_footer_styles');
 
@@ -194,7 +199,7 @@ function ak_post_schooling() {
 		'label'               => __( 'schooling', 'akadeemia' ),
 		'description'         => __( 'Schoolings', 'akadeemia' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'thumbnail', 'post-formats'), 
+		'supports'            => array( 'title', 'editor', 'thumbnail', 'post-formats'),
 		'taxonomies'          => array( 'genres' ),
 		'hierarchical'        => false,
 		'public'              => true,
