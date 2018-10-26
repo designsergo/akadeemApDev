@@ -577,6 +577,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   color: #8a8a8a;
   position: relative;
   top: 13px;
+  text-transform: uppercase;
 }
 
 
@@ -1427,7 +1428,7 @@ footer,footer a{
  {
    .search-header{right:42px}.bg-logo{display:none}
    .row-intro h2,.row-intro p{
-     text-align:right;
+     text-align:center;
    }
    .row-intro a{float:right;margin-right:6px}
  }

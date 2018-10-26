@@ -1636,7 +1636,7 @@ footer .floaty-link {
   /* CONTENT */
   .row-intro h2,
   .row-intro p {
-    text-align: right;
+    text-align: center;
   }
   .row-intro a {
     float: right;
