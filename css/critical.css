@@ -687,7 +687,7 @@ header .search span:nth-child(2) {
 @media (min-width: 768px) and (max-width: 769px) {
   .row-intro h2,
   .row-intro p {
-    padding-left: 100px;
+    padding-left: 0px;
   }
   header .bg-slant {
     top: -842px;
@@ -740,6 +740,6 @@ header .search span:nth-child(2) {
 }
 @media (min-width: 768px) and (max-width: 1470px) {
   .row-intro {
-    padding-left: 100px;
+    padding-left: 0px;
   }
 }
