@@ -561,9 +561,13 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   border: solid 2px #ffffff;
   background-color: #fdfdfd;
   margin: 0px 20px 65px 20px;
+  font-family: Roboto;
 }
+/* .site-search-category select, select option {
+  color: hotpink;
+} */
 .site-search-category_holder{
-  content-align: center;
+  align-content: center;
 }
 .product-categories{
   font-family: Roboto;
@@ -576,7 +580,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   text-align: right;
   color: #8a8a8a;
   position: relative;
-  top: 13px;
+  top: 40px;
   text-transform: uppercase;
 }
 
@@ -966,10 +970,9 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   .row-table .table-cell.date{
     /*width:49%;*/
 
-    //padding:15px 0 0 15px;
+    /* //padding:15px 0 0 15px; */
     /*white-space:nowrap;*/
     line-height: 22px;
-    font-weight: 500;
   }
   
   .row-table .table-header .date{
@@ -978,6 +981,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   }
   .row-table .table-row .date{
     width: 110px;
+    font-weight: 500
   }
   .row-table .table-cell.title{
     /*display:block;
@@ -991,6 +995,9 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   .row-table .table-cell.title p{
     font-size: 13px;
    }
+   .row-table .table-header .table-cell.duration {
+    font-weight: 700;
+  }   
   .row-table .table-cell.duration {
     line-height: 22px;
     font-weight: 500;
@@ -998,6 +1005,10 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   .row-table .table-header .table-cell.duration {
     padding-left: 5px;
   }
+  
+  .row-table .table-header .table-cell.trainer {
+    font-weight: 700;
+  }   
   .row-table .table-cell.trainer{
     position:absolute;top:15px;right:15px;
     line-height: 22px;
@@ -1268,7 +1279,8 @@ footer,footer a{
        font-size:46px;
        font-weight:300;
      }
-     .row-table{font-size:16px}.row-table .table-header{
+     .row-table{font-size:16px}
+     .row-table .table-header{
        font-weight:700;
        padding:20px 0px 5px 0px;
        height:60px;
