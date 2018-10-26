@@ -492,7 +492,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  }
  .site-search {
     width: 875px;
-    height: 30px;
+    height: 30px; /* TODO */
     font-family: Roboto;
     font-size: 18px;
     font-weight: 300;
@@ -503,6 +503,8 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     text-align: center;
     color: #424242;
     border: 0;
+    background-color: rgba(138, 138, 138, 0.03);
+    box-shadow: 0 0 10px 0 rgba(138, 138, 138, 0.2);
  }
  .btn-site-search{
    border: 0;
@@ -548,6 +550,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
    height: 0px;
    box-shadow: 0 0 4px 1px rgba(233, 233, 233, 0.5);
    border: solid 1px #e9e9e9;
+   /* display:none; */ /* TODO */
  }
  .site-search-holder {
    text-align: center;
