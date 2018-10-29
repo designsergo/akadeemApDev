@@ -302,8 +302,8 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
    color: #a71617;
  }
  .modal_content {
-   font-size: 18px;
-   margin: 0px 40px 0px 40px;
+   font-size: 16px;
+   margin-bottom: 25px;
    line-height: 1.56;
  }
  .modal_content b {
@@ -364,35 +364,21 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
    opacity: 1;
  }
  .form--newsletter {
-   /* max-width: 420px; */
+   max-width: 420px;
    margin: 0 auto;
  }
  .form--newsletter .input {
-  text-align: center;
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  /*border: 1px solid #e7e6e2;*/
-  border: 0;
-  padding: 20px 0 0 0;
-  font-size: 18px;
-  margin-bottom: 10px;
-  outline: none;
-  font-family: Roboto;
-  font-weight: 500;
-  font-style: bold;
-}
-
-::-webkit-input-placeholder {color:#424242;
-font-style: italic;}
-::-moz-placeholder          {color:#424242;}/* Firefox 19+ */
-:-moz-placeholder           {color:#424242;}/* Firefox 18- */
-:-ms-input-placeholder      {color:#424242;}
-
-.input{
- color:#424242 ;
- 
-}
+   text-align: center;
+   display: block;
+   width: 100%;
+   max-width: 100%;
+   /*border: 1px solid #e7e6e2;*/
+   border: 0;
+   padding: 20px 0 0 0;
+   font-size: 16px;
+   margin-bottom: 10px;
+   outline: none;
+ }
  .form--newsletter .newsletter-hr {
    margin-top: 5px;
    margin-bottom: 5px;
@@ -400,15 +386,9 @@ font-style: italic;}
    box-shadow: 0 0 4px 1px rgba(233, 233, 233, 0.5);
    border: solid 1px #e9e9e9;
  }
- .modal-window-hr{
-  margin: 5px 45px 5px 45px;
-  height: 0px;
-  box-shadow: 0 0 4px 1px rgba(233, 233, 233, 0.5);
-  border: solid 1px #e9e9e9;
- }
  .form--newsletter .button {
    display: inline-block;
-   padding: 7px 50px;
+   padding: 15px 50px;
    margin: 30px 0 0 0;
    font-size: 18px;
    font-weight: 500;
@@ -419,9 +399,8 @@ font-style: italic;}
    border: solid 2px #ffffff;
  }
  .form--newsletter .button:hover{
-  background-color: #57897c;
-  color:#ffffff;
-}
+   background-color: #fdfdfd;
+ }
  .button:hover {
    background: #de162d;
  }
@@ -490,8 +469,6 @@ font-style: italic;}
    pointer-events: all;
  }
 
-
-
  .carousel-inner, .overflow-hide,header h1{overflow:hidden}
 
  #trainer-footer {
@@ -524,9 +501,13 @@ font-style: italic;}
     text-align: center;
     color: #424242;
     border: 0;
-    background-color: rgba(138, 138, 138, 0.03);
-    box-shadow: 0 0 10px 0 rgba(138, 138, 138, 0.2);
+    height:60px;
  }
+ .site-search input:focus  {   
+  background-color: rgba(138, 138, 138, 0.03);
+  border: transparent;
+ }
+
  .btn-site-search{
    border: 0;
    margin-left: 0;
@@ -547,6 +528,7 @@ font-style: italic;}
    -moz-border-radius-bottomright: 2px;
    border-top-right-radius: 2px;
    border-bottom-right-radius: 2px;
+   box-shadow: 0 0 10px 0 rgba(138, 138, 138, 0.2);
  }
  .btn-site-search-span {
    font-family: akadeemia!important;
@@ -558,20 +540,20 @@ font-style: italic;}
     text-transform: none;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
-    padding: 5px;
     cursor: pointer;
  }
  .btn-site-search-span:before {
+  height:30px;
+  width: 30px;
+  padding: 20px 20px 20px 20px;
+  box-shadow: 0 0 10px 0 rgba(138, 138, 138, 0.2);
    content:"\e904";
  }
  .site-search-hr {
-   width: 875px;
-   margin-top: 5px;
-   margin-bottom: 15px;
+   margin-top: 0px;
+   margin-bottom: 27px;
    height: 0px;
    box-shadow: 0 0 4px 1px rgba(233, 233, 233, 0.5);
-   border: solid 1px #e9e9e9;
-   /* display:none; */ /* TODO */
  }
  .site-search-holder {
    text-align: center;
@@ -593,15 +575,21 @@ font-style: italic;}
 }
 .site-search-category_holder{  
   width: 50%;
+  height: 65px;
   position: relative;
+  text-align: right;
+  padding-right: 20px;
 }
 
 .site-search-date_holder {
   width: 50%;
   position: relative;
   left: 50%;
-  bottom: 100px;
-  margin-bottom: -100px;
+  height: 65px;
+  bottom: 65px;
+  margin-bottom: -65px;
+  text-align: left;
+  padding-left: 20px;
 }
 .site-search-category{
   width: 186px;
@@ -635,17 +623,44 @@ font-style: italic;}
 @media (max-width:425px){
   .site-search-date_holder {
     width:100%;
+    height: 100px;
+    margin-bottom: -100px;
     position: relative;
     left: 0%;
     bottom: 50px;
     margin-bottom: -100px;
+    padding-left:0px !important;
   }
+  .site-search-category_holder {    
+    height: 100px;
+    text-align:left;
+  }
+  .btn-site-search-span:before {
+    position: relative;
+    top:10px;
+  }
+ }
+
+ @media (max-width:768px){
+  .site-search-date_holder {
+    padding-left: 16px;
+  }
+  .site-search-category_holder {
+    padding-right: 16px;
+  }
+  .site-search {
+    height:30px;
+ }
+ .btn-site-search-span:before {
+  padding: 6px 6px 6px 6px;
+  box-shadow: 0 0 10px 0 rgba(138, 138, 138, 0.2);
+ }
  }
 
  @media (min-width: 768px) {
   .modal-dialog{
-    width: 950px;
-    margin: 230px auto;
+    width: 600px;
+    margin: 30px auto;
   }
   /*.modal-content{box-shadow:0 5px 15px rgba(0,0,0,.5)}*/
   .modal-sm{width:300px}
@@ -678,8 +693,6 @@ font-style: italic;}
    .visible-xs-block{display:block!important}
    .visible-xs-inline{display:inline!important}
    .visible-xs-inline-block{display:inline-block!important}
-   .modal-dialog h2{color: #a71617;font-size:26px;padding: 5px 5px 5px 5px;font: 300 26px/31px Roboto; }
-   .modal-dialog p{color: #424242;font-size:16px;text-align:center}
  }
 
  @media (min-width:768px) and (max-width:991px){
@@ -703,7 +716,7 @@ font-style: italic;}
       width: 635px;
    }
    .site-search-hr {
-     width: 635px;
+    width: 80%;
    }
  }
  @media (max-width:992px){
@@ -719,7 +732,7 @@ font-style: italic;}
       width: 555px;
    }
    .site-search-hr {
-     width: 555px;
+    width: 80%;
    }
  }
  @media (max-width:640px){
@@ -727,7 +740,7 @@ font-style: italic;}
       width: 505px;
    }
    .site-search-hr {
-     width: 505px;
+    width: 80%;
    }
  }
  @media (max-width:590px){
@@ -1500,7 +1513,7 @@ footer,footer a{
       width: 635px;
    }
    .site-search-hr {
-     width: 635px;
+    width: 80%;
    }
  }
 
@@ -1624,7 +1637,7 @@ footer,footer a{
      width: 85%;
   }
   .site-search-hr {
-    width: 435px;
+    width: 80%;
   }
   .btn-site-search-span {
     position: absolute;
