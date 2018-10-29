@@ -7,11 +7,9 @@
 		<div class="bg">
 			<div class="bg-gradient">
 				<div class="title">
-					<h2><?= get_the_title(); ?></h2>
 					<h3><?= get_post_meta(get_the_ID(), 'meta_subtitle', true) ?></h3>
+					<h2><?= get_the_title(); ?></h2>
 				</div>
-				<img class="bg-logo hidden-xs" src="<?= get_stylesheet_directory_uri(); ?>/img/logo-akadeemia-a.svg" alt="Äripäeva Akadeemia">
-				<div class="bg-logo-text hidden-xs"></div>
 			</div>
 		</div>
 	</div>
