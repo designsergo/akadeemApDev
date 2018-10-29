@@ -66,14 +66,14 @@
 
 		$trainings = $wpdb->get_results("SELECT sid,name,subtitle,trainer_firstname,trainer_lastname,eventstartdate,eventenddate FROM $table WHERE trainer_firstname = '$trainerName[0]' AND trainer_lastname = '$trainerName[1]'");
 
+		$trainingsCount = 0;
+
 		if ($trainings) {
 			echo '<div class="upcoming-box"><div class="upcoming">'.
 				'<div class="page-nav next ap-icon-arrow-a hidden-xs"></div>'.
 				'<div class="page-nav prev ap-icon-arrow-a hidden-xs disabled"></div>'.
 				'<h2>Tulevased koolitused</h2>'.
 				'<div class="events">';
-
-			$trainingsCount = 0;
 
 			foreach ( $trainings as $training ) {
 				$upcomingImageUrl = MultiPostThumbnails::get_post_thumbnail_url( get_post_type(), 'upcoming-image', $get_the_ID);
@@ -105,7 +105,16 @@
 				'</div>';
 			}
 
-			if ( 0 == $trainingsCount ) {
+
+
+			echo '</div>'; //class="events"
+			echo '</div></div>'; // <div class="upcoming-box"><div class="upcoming">
+
+		}
+
+		if ( 0 == $trainingsCount ) {
+			echo '<div class="upcoming-box"><div class="upcoming">'.
+				'<div class="events">';
 
 				echo '<div id="trainer-sendMail">' ;
 
@@ -116,21 +125,18 @@
 							sarnase teema vastu, siis anna meile sellest teda ja me võtame Sinuga ühendust.
 					</p>';
 					echo '<form class="form--sendMail" method="post" id="send-mail" >
-	          <input id="sendmail-email" type="text" class="input"
+						<input id="sendmail-email" type="text" class="input"
 							placeholder="E-post" name="newsletter-email">
-	          <hr class="sendmail-hr">
-	          <div id="sendmail-error" class="sendmail-error"></div>
-	          <input class="button button--sm" type="submit" value="PALUN VÕTTA MINUGA ÜHENDUST" name="Submit">
-	        </form>';
+						<hr class="sendmail-hr">
+						<div id="sendmail-error" class="sendmail-error"></div>
+						<input class="button button--sm" type="submit" value="PALUN VÕTTA MINUGA ÜHENDUST" name="Submit">
+					</form>';
 
 					echo '<span class="sendmail_thanks">
-	            Tänan, et meile oma soovist teada andsid! Võtame Sinuga esimesel võimalusel ühendust.
-	          </span>';
+							Tänan, et meile oma soovist teada andsid! Võtame Sinuga esimesel võimalusel ühendust.
+						</span>';
 
 				echo '</div>';
-
-
-			}
 
 			echo '</div>'; //class="events"
 			echo '</div></div>'; // <div class="upcoming-box"><div class="upcoming">
