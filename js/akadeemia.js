@@ -121,6 +121,33 @@ function initAboutGallery(action) {
 */
 
 
+$(function() {
+	$('input[name="daterange"]').daterangepicker({
+		autoUpdateInput: false,
+		opens: 'left'
+	}, function(start, end, label) {
+		console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+	});
+
+	$('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('DD.MM.YYYY') + ' - ' + picker.endDate.format('DD.MM.YYYY'));
+			console.log(picker.startDate, picker.endDate);
+  });
+
+	$('input[name="daterange"]').on('cancel.daterangepicker', function(ev, picker) {
+      $(this).val('');
+  });
+});
+
+$( "#site-search-date_delete" ).click(function() {
+	$('#site-search-date').val('');
+});
+
+$('#site-search-date').on('input', function() {
+    alert( "Handler for input() called." );
+});
+
+
 /*** TRAININGS ***/
 var activeSort = 'EventStartDate',
 	activeOrder = 'asc',
@@ -128,6 +155,8 @@ var activeSort = 'EventStartDate',
 	activeOffset = 0;
 var dataLoaded = "loadTrainings";
 var trainingsList = [];
+var categoryList = [];
+var dateList = [];
 
 function loadTrainings(sort, order, skip) {
 	sort = typeof sort !== 'undefined' ? sort : 'EventStartDate';
@@ -142,15 +171,22 @@ function loadTrainings(sort, order, skip) {
 
 	var today = new Date();
 	var todayIso = today.toISOString();
-	var queryUrl = 'http://poodapi.aripaev.ee/v4/Products';
-	var queryParams = {
+
+//	var queryUrl = 'http://poodapi.aripaev.ee/v4/Products';
+//	var queryParams = {
 		// '$select' : '*',
-		'$select' : 'Id,Name,SubTitle,EventStartDate,EventEndDate,AdditionalDescription,ProductPersons,ShortDescription',
-		'$filter' : 'Deleted eq false and Published eq true and ProductTemplateId eq 4 and (EventStartDate ge '+todayIso+' or (EventEndDate ne null and EventEndDate ge '+todayIso+')) and AvailableEndDateTimeUtc ge '+todayIso,
-		'$expand' : 'ProductPersons($expand=Person($select=FirstName,LastName))',
-		'$orderby': sort+' '+order,
-		'$count' : 'true'
+//		'$select' : 'Id,Name,SubTitle,EventStartDate,EventEndDate,AdditionalDescription,ProductPersons,ShortDescription,ProductCategories',
+//		'$filter' : 'Deleted eq false and Published eq true and ProductTemplateId eq 4 and (EventStartDate ge '+todayIso+' or (EventEndDate ne null and EventEndDate ge '+todayIso+')) and AvailableEndDateTimeUtc ge '+todayIso,
+//		'$expand' : 'ProductPersons($expand=Person($select=FirstName,LastName))',
+//		'$orderby': sort+' '+order,
+//		'$count' : 'true'
+//	};
+
+	var queryUrl = 'http://poodapi.aripaev.ee/api/products';
+	var queryParams = {
+		'Template': 'schooling'
 	};
+
 	//'$top'    : pageItems,
 	//'$skip'   : skip,
 	queryUrl += '?' + $.param(queryParams);
@@ -163,13 +199,15 @@ function loadTrainings(sort, order, skip) {
 
 	$.ajax({
 		method: 'GET',
-		timeout: 5000,
+		timeout: 15000,
 		url: queryUrl
 	}).fail(function(error) {
 		console.log('loadTrainings: ERROR contacting poodapi.aripaev.ee!', error);
 	}).done(function(data) {
 		totalCount = data['@odata.count'];
-		currentCount = data.value.length;
+	//	currentCount = data.value.length;
+		currentCount = data.Products.length;
+
 
 		if (currentCount === 0) {
 			$('#trainings-table .loading').html('<p class="error">Koolitusi ei leitud!</p>');
@@ -182,36 +220,91 @@ function loadTrainings(sort, order, skip) {
 
 		trainingsList = [];
 
-		$(data.value).each(function(index) {
+//		$(data.value).each(function(index) {
+		$(data.Products).each(function(index) {
 			var item = $(this)[0];
-			var date = ( new Date(item.EventStartDate) < new Date(item.EventEndDate) ) ? formatDate(item.EventStartDate)+' - '+formatDate(item.EventEndDate) : formatDate(item.EventStartDate);
+			//var date = ( new Date(item.EventStartDate) < new Date(item.EventEndDate) ) ? formatDate(item.EventStartDate)+' - '+formatDate(item.EventEndDate) : formatDate(item.EventStartDate);
+			var date = ( new Date(item.EventStartDateTimeUtc) < new Date(item.EventEndDateTimeUtc) ) ?
+				formatDate(item.EventStartDateTimeUtc)+' - '+formatDate(item.EventEndDateTimeUtc) :
+				formatDate(item.EventStartDateTimeUtc);
 
-			if (item.ProductPersons.length > 0) {
-				firstName = (item.ProductPersons[0].FirstName) ? item.ProductPersons[0].FirstName : item.ProductPersons[0].Person.FirstName;
-				lastName = (item.ProductPersons[0].LastName) ? item.ProductPersons[0].LastName : item.ProductPersons[0].Person.LastName;
+//Persons
+			//if (item.ProductPersons.length > 0) {
+			if (item.Persons.length > 0) {
+				firstName = (item.Persons[0].FirstName) ? item.Persons[0].FirstName : item.Persons[0].Person.FirstName;
+				lastName = (item.Persons[0].LastName) ? item.Persons[0].LastName : item.Persons[0].Person.LastName;
+			}
+			var trainerName = '';
+			for(var count = 0; count < item.Persons.length; count++) {
+				//if ("Performer" == item.Persons[count].PersonType) {
+				if ("Performer" == item.Persons[count].Type) {
+					firstNameTmp = (item.Persons[count].FirstName) ? item.Persons[count].FirstName : item.Persons[count].Person.FirstName;
+					lastNameTmp = (item.Persons[count].LastName) ? item.Persons[count].LastName : item.Persons[count].Person.LastName;
+					trainerName += firstNameTmp + ' ' + lastNameTmp + ',<BR>';
+				}
+			}
+			if (trainerName.length > 3) {
+				trainerName = trainerName.substring(0, trainerName.length-5);
+			}
+
+			var categories = [];
+			for(var count = 0; count < item.ProductCategories.length; count++) {
+				if (0 < item.ProductCategories[count].length) {
+					//categories += item.ProductCategories[count] + ',<BR>';
+					var n = item.ProductCategories[count].indexOf(">> ");
+					if (-1 < n) {
+						var currItem = item.ProductCategories[count].substring(n+3);
+						categories.push( currItem );
+						if (-1 == categoryList.indexOf(currItem)) {
+							categoryList.push( currItem );
+
+							var o = new Option(currItem, currItem);
+							/// jquerify the DOM object 'o' so we can use the html method
+							$(o).html(currItem);
+							$("#site-search-category").append(o);
+
+						}
+					}
+
+				}
+			}
+			if (categories.length > 3) {
+				categories = categories.substring(0, categories.length-5);
 			}
 
 			subtitle = (item.SubTitle !== null) ? item.SubTitle :'';
 
+			//var dateObj = formatDate(item.EventStartDateTimeUtc);
+			var dateObj = item.EventStartDateTimeUtc.substring(0, 10);
+			//var dateObj = new Date(dateTxt);
+			if (-1 == dateList.indexOf(dateObj)) {
+				//dateList.push( formatDate(item.EventStartDateTimeUtc) );
+				dateList.push( dateObj );
+			}
+			dateList.sort();
+
 			var trainingRow = {
 				Id: item.Id,
 				date: date,
-				startDate: new Date(item.EventStartDate),
+				dateSort: formatDate(item.EventStartDateTimeUtc),
+				startDate: new Date(item.EventStartDateTimeUtc),
 				Name: item.Name,
 				subtitle: subtitle,
-				duration: item.AdditionalDescription,
-				trainer: firstName+' '+lastName,
+				duration: item.EventPeriodInfo,
+				trainer: trainerName,
 				ShortDescription: item.ShortDescription,
+				ProductCategories: categories,
 			};
 
 			trainingsList.push(trainingRow);
+			dataLoaded = "loaded";
 
-			var template = '<div class="table-row table-row-open" id="table-row-'+item.Id+'" id-nr="'+item.Id+'">'+
+	/*		var template = '<div class="table-row table-row-open" id="table-row-'+item.Id+'" id-nr="'+item.Id+'">'+
 				''+
 					'<div class="table-cell date">'+date+'</div>'+
 					'<div class="table-cell title"><h3>'+item.Name+'</h3><p>'+subtitle+'</p></div>'+
-					'<div class="table-cell duration hidden-xs">'+item.AdditionalDescription+'</div>'+
-					'<div class="table-cell trainer hidden-xs">'+firstName+' '+lastName+'</div>'+
+					'<div class="table-cell duration hidden-xs">'+item.EventPeriodInfo+'</div>'+
+					'<div class="table-cell trainer hidden-xs">'+trainerName+'</div>'+
 					'<div class="table-cell more"><span class="text hidden-xs"></span>'+
 					'<span class="ap-table-order hidden" id="ap-table-order-'+item.Id+'"></span><span class="ap-table-order-asc" id="ap-table-order-asc-'+item.Id+'"></span></div>'+
 					'<div class="table-cell short-description hidden" id="short-description-'+item.Id+'">'+item.ShortDescription+
@@ -220,11 +313,13 @@ function loadTrainings(sort, order, skip) {
 					'</div></div>'+
 				''+
 			'</div>';
+
 			//<a href="http://pood.aripaev.ee/Product/ProductDetails?productId='+item.Id+'" target="_blank">
 			//<span class="ap-icon-arrow-a"></span>
 			//</a>
 
 			$('#trainings-table .items').append(template);
+*/
 		});
 
 		// pagination
@@ -259,12 +354,17 @@ function loadTrainings(sort, order, skip) {
 		});
 		*/
 
-		//trainingsList.sort(sortTrainingsByNameAsc);
+		trainingsList.sort(sortTrainingsByNameAsc);
 
 		// row click bind
-		$('#trainings-table .table-row-open').click(function(e) {
-			rowClick( $(this) );
-		});
+	//	$('#trainings-table .table-row-open').click(function(e) {
+	//		rowClick( $(this) );
+	//	});
+
+		console.log(trainingsList);
+		console.log(categoryList);
+		console.log(dateList);
+		showTrainings(trainingsList);
 	});
 }
 
@@ -328,6 +428,11 @@ function rowClick(obj) {
 	var moreTextId = '#short-description-'+idNr;
 	var orderId = '#ap-table-order-'+idNr;
 	var orderAscId = '#ap-table-order-asc-'+idNr;
+
+	// reset all arrows
+	$('.ap-table-order-asc').removeClass("hidden");
+	$('.ap-table-order').addClass("hidden");
+
 	if ($(moreTextId).hasClass("hidden")) {
 		$(orderId).removeClass("hidden");
 		$(orderAscId).addClass("hidden");
@@ -429,7 +534,6 @@ function searchTrainings(search, sort, order, skip) {
 		});
 
 		trainingsList.sort(sortTrainingsByDateAsc);
-
 		showTrainings(trainingsList);
 
 	});
@@ -441,35 +545,44 @@ function showTrainings(trainingsList) {
 
 	$(trainingsList).each(function(index) {
 		var item = $(this)[0];
+		var category = '<div class="product-categories"> <span class="product-categories-title">KATEGOORIA: </span>';
+		for(var count = 0; count < item.ProductCategories.length; count++) {
+			category += item.ProductCategories[count] + ', ';
+		}
+		if (item.ProductCategories.length > 0) {
+			category = category.substring(0, category.length-2);
+		}
+		category += '</div>';
+
 		var template = '<div class="table-row table-row-open" id="table-row-'+item.Id+'" id-nr="'+item.Id+'">'+
 			''+
 				'<div class="table-cell date">'+item.date+'</div>'+
 				'<div class="table-cell title"><h3>'+item.Name+'</h3><p>'+item.subtitle+'</p></div>'+
 				'<div class="table-cell duration hidden-xs">'+ item.duration +'</div>'+
 				'<div class="table-cell trainer hidden-xs">'+item.trainer+'</div>'+
-				'<div class="table-cell more"><span class="text hidden-xs"></span><span class="ap-icon-arrow-a"></span></div>'+
+				'<div class="table-cell more"><span class="text hidden-xs"></span>'+
+				'<span class="ap-table-order hidden" id="ap-table-order-'+item.Id+'"></span><span class="ap-table-order-asc" id="ap-table-order-asc-'+item.Id+'"></span></div>'+
 				'<div class="table-cell short-description hidden" id="short-description-'+item.Id+'">'+item.ShortDescription+
-				'<div> <a class="button register" href="http://pood.aripaev.ee/Product/ProductDetails?productId='+item.Id+'#registreerimine" target="_blank">Registreeru</a>'+
-				'<a class="button info" href="http://pood.aripaev.ee/Product/ProductDetails?productId='+item.Id+'" target="_blank">Lisainfo</a>'+
-				'</div></div>'+
+					category +
+					'<div> <a class="button register" href="http://pood.aripaev.ee/Product/ProductDetails?productId='+item.Id+'#registreerimine" target="_blank">Registreeru</a>'+
+					'<a class="button info" href="http://pood.aripaev.ee/Product/ProductDetails?productId='+item.Id+'" target="_blank">Lisainfo</a>'+
+					'</div>' +
+				'</div>'+
 			''+
 		'</div>';
+
+
 		//<a href="http://pood.aripaev.ee/Product/ProductDetails?productId='+item.Id+'" target="_blank">
 		//</a>
 
 		$('#trainings-table .items').append(template);
+
+
 	});
 
 	// row click bind
 	$('#trainings-table .table-row-open').click(function(e) {
-			var idNr = $(this).attr('id-nr');
-			var moreTextId = '#short-description-'+idNr;
-			if ($(moreTextId).hasClass("hidden")) {
-				$(moreTextId).removeClass("hidden");
-			} else {
-				$(moreTextId).addClass("hidden");
-			}
-
+			rowClick( $(this) );
 	});
 }
 
@@ -984,6 +1097,57 @@ var newsletter = {
       }
     return tryData;
   }
+}
+
+$(document).on('submit', 'form#send-mail', function(e){
+  e.preventDefault();
+  sendMail.subscribe();
+});
+
+var sendMail = {
+	subscribe: function() {
+    var object = this;
+    //var signupName = $.trim($("#newsletter-name").val());
+    var signupEmail = $("#sendmail-email").val();
+    //var signupSubdomain = $('#send-newsletter').data('subdomain');
+    var errorField = $("#sendmail-error").empty();
+    //var loading = $("#modal-newsletter .loading, #modal-newsletter .loading-overlay");
+
+    if (signupEmail.length === 0) {
+      errorField.text('Palun sisestage e-posti aadress!');
+      return false;
+    } else {
+      //loading.show();
+    }
+
+    $.ajax({
+        method: 'GET',
+        url: '/sendm/?email='+signupEmail
+    }).done(function(data) {
+      //  data = object.cleanResult(data);
+
+      //  if (data.code === 101) {
+      //    var $modal = $('#modal-newsletter');
+
+          //$modal.find('.modal_thanks_email').html('<a href="mailto:' + signupEmail + '">' + signupEmail + '</a>');
+      //    $modal.find('.form--sendMail').hide();
+      //    $modal.find('.sendmail_thanks').show();
+      //  } else {
+          //errorField.text(object.parseError(data));
+      //  }
+
+				var $block = $('#trainer-sendMail');
+
+				//$modal.find('.modal_thanks_email').html('<a href="mailto:' + signupEmail + '">' + signupEmail + '</a>');
+				$block.find('.sendmail_intro, .form--sendMail').hide();
+				$block.find('.sendmail_thanks').show();
+
+    }).fail(function(data) {
+        errorField.html(object.parseError(data));
+    }).always(function() {
+        //loading.hide();
+    });
+  },
 }
 
 // Reset modal

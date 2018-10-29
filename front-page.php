@@ -38,11 +38,9 @@
 					</select>
 				</div>
 				<div class="site-search-date_holder" id="site-search-date_holder">
-					<select name="site-search-date" class="site-search-date" id="site-search-date">
-						<option value="-">Vali ajavahemik</option>
-					</select>
-					<input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
-
+					<input type="text" name="daterange" class="site-search-date"
+						id="site-search-date" value="" placeholder="Vali ajavahemik" />
+					<span class="site-search-date_delete" id="site-search-date_delete"> x </span>
 				</div>
 		</div>
 	</div>
