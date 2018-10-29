@@ -117,10 +117,10 @@
 					</p>';
 					echo '<form class="form--sendMail" method="post" id="send-mail" >
 	          <input id="sendmail-email" type="text" class="input"
-							placeholder="Soovin infot tulevaste koolituse kohta" name="newsletter-email">
+							placeholder="E-post" name="newsletter-email">
 	          <hr class="sendmail-hr">
 	          <div id="sendmail-error" class="sendmail-error"></div>
-	          <input class="button button--sm" type="submit" value="LIITU UUDISKIRJAGA" name="Submit">
+	          <input class="button button--sm" type="submit" value="PALUN VÕTTA MINUGA ÜHENDUST" name="Submit">
 	        </form>';
 
 					echo '<span class="sendmail_thanks">
