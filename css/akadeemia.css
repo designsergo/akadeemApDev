@@ -620,10 +620,11 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   background-color: #fdfdfd;
   margin: 0px 0px 65px 0px;
   font-family: Roboto;
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;
+  background: url(https://i.gyazo.com/bc3bc86e4effba4b08a17b3db1eb8d53.png) no-repeat right center;
 }
-/* .site-search-category select, select option {
-  color: hotpink;
-} */
 
 .site-search-date {
   width: 186px;
@@ -634,6 +635,15 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   background-color: #fdfdfd;
   margin: 0px 10px 65px 0px;
   font-family: Roboto;
+}
+.site-search-date::placeholder{
+  font-weight:400;
+  font-style: normal;
+  /* text-align:center; */ /*.site-search-category is not alignec center so this shan't be either*/
+}
+
+.site-search-category select{
+  text-align: center;
 }
 
 .site-search-date_delete {
