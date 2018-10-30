@@ -511,8 +511,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     height: 30px; /* TODO */
     font-family: Roboto;
     font-size: 18px;
-    font-weight: 300;
-    font-style: italic;
+    font-weight: 500;
     font-stretch: normal;
     line-height: 1.56;
     letter-spacing: normal;
@@ -520,6 +519,10 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     color: #424242;
     border: 0;
     height:60px;
+ }
+ .site-search::placeholder {
+  font-weight: 300;
+    font-style: italic;
  }
  .site-search input:focus  {   
   background-color: rgba(138, 138, 138, 0.03);
