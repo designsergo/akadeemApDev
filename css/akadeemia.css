@@ -587,7 +587,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
 .product-categories{
   font-family: Roboto;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   font-stretch: normal;
   line-height: 2.33;
@@ -597,6 +597,9 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   position: relative;
   top: 40px;
   text-transform: uppercase;
+}
+.product-categories-title {
+  font-weight:500;
 }
 .site-search-category_holder{  
   width: 50%;
