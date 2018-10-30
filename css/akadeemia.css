@@ -570,7 +570,9 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   box-shadow: 0 0 10px 0 rgba(138, 138, 138, 0.2);
   position:relative;
   top:2px;
-   content:"\e904";
+  content:"\e904";
+  color: #8a8a8a;
+  -webkit-text-stroke: 1px white;
  }
  .site-search-hr {
    margin-top: 0px;
