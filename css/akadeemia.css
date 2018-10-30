@@ -49,6 +49,9 @@
  .row-table .table-cell.more {
   padding-left: 24%;
 }
+/* .row-table .table-cell.title p {
+  width: 190%;
+} */
 }
 
  @media (min-width:1200px){
@@ -677,8 +680,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   background-color: transparent;
   font-family: Roboto;
   font-size: 18px;
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 400;
   line-height: 1.56;
   color: #424242;
   margin-top:10px;
@@ -775,6 +777,9 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   padding-left: 0px;
 }
 
+/* header nav ul li a {
+  font-size: 19px !important; 
+} */
 
  }
 
@@ -993,7 +998,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  header nav ul li .current_page_item {
    font-weight: 900;
  }
- header nav ul li a{font:400 30px/80px Roboto;color:#fff}
+ header nav ul li a{font:400 19px/80px Roboto;color:#fff}
  header nav ul li a:hover {
    color:#ffffff;
  }
@@ -1125,6 +1130,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   }
   .sendmail_intro {
      font-size:14px !important;
+     line-height: 19px !important;
   }
   .row-table .table-header .table-cell.title{display:inline-block;width:49.4%;padding:15px}
   .row-table .table-header .table-cell.trainer{text-align:right;width:49.4%;right:15px;position:inherit}
