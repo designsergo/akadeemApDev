@@ -1106,10 +1106,23 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
 .row-table .table-row{padding-top: 15px;}
 
 .row-text ul {
-  padding-inline-start:10px;
+  padding-inline-start: 5px;
 }
 
 @media (max-width:768px){
+  .row-trainers-details .info .details h2,
+  .row-trainers-details h2 {
+    font-size:26px !important;
+    line-height:36p;
+    text-align:left !important;
+    margin:0px !important;
+  }
+  .row-trainers-details .info .details p {
+    font-size:14px !important;
+  }
+  .sendmail_intro {
+     font-size:14px !important;
+  }
   .row-table .table-header .table-cell.title{display:inline-block;width:49.4%;padding:15px}
   .row-table .table-header .table-cell.trainer{text-align:right;width:49.4%;right:15px;position:inherit}
   .row-table .table-cell.more .ap-table-order, .row-table .table-cell.more .ap-table-order-asc {
