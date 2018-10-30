@@ -619,6 +619,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   border: solid 2px #ffffff;
   background-color: #fdfdfd;
   margin: 0px 0px 65px 0px;
+  padding-left:5px;
   font-family: Roboto;
   -webkit-appearance: none; 
   -moz-appearance: none;
@@ -634,7 +635,9 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   border: solid 2px #ffffff;
   background-color: #fdfdfd;
   margin: 0px 10px 65px 0px;
+  padding-left:5px;
   font-family: Roboto;
+  background: url(https://i.gyazo.com/754bdef37d34b34f89ed698f890ad590.png) no-repeat right center;
 }
 .site-search-date::placeholder{
   font-weight:400;
@@ -642,8 +645,8 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   /* text-align:center; */ /*.site-search-category is not alignec center so this shan't be either*/
 }
 
-.site-search-category select{
-  text-align: center;
+.site-search-category_holder select{
+  /* text-align: center; */ /*not really supported by anything*/
 }
 
 .site-search-date_delete {
