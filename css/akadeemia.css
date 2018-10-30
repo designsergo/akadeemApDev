@@ -741,6 +741,9 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  }
 
  @media (max-width:768px){
+  .upcoming-box {
+    background-color: rgba(138, 138, 138, 0.03);
+  }
   .row-trainers-page h2,
   .row-contact-page h2 {
     font-size:26px;
@@ -1416,9 +1419,15 @@ footer,footer a{
   width: 250px;
   margin: 0px 50px 0px 30px;
 }
-.row-trainers-details .upcoming-box .upcoming p{font-size:16px;line-height:26px}
+.row-trainers-details .upcoming-box .upcoming p{
+  font-size:16px;
+  line-height:19px}
 
-.row-trainers-details .upcoming-box .upcoming .event .image:after{display:block;content:'';padding-bottom:100%}
+.row-trainers-details .upcoming-box .upcoming .event .image:after{
+  display:block;
+  content:'';
+  padding-bottom:100%
+}
 .row-trainers-details .upcoming-box .upcoming .event .image .logo{height:167px;position:absolute;bottom:0;right:-73px}
 .row-trainers-details .upcoming-box .upcoming .event .date{
   font-weight:500;
