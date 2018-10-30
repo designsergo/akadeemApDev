@@ -1050,8 +1050,12 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  header .burger span{
    /* background:#323232; */
    background: #ffffff;
-   display:block;height:4px;
-   position:absolute;left:20px;width:33px;border-radius:2px;
+   display:block;
+   height:2px;
+   position:absolute;
+   left:20px;
+   width:33px;
+   border-radius:2px;
    -webkit-transition:.2s ease-in-out;
    -moz-transition:.2s ease-in-out;
    transition:.2s ease-in-out
