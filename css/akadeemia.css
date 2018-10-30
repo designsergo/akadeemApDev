@@ -741,6 +741,16 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  }
 
  @media (max-width:768px){
+  .row-about .bg h2 {
+    font-size: 26px !important;
+  }
+  .row-about .bg h3 {
+    font-size: 20px !important;
+  }
+  .sample-program h2 {
+    font-size: 26px;
+    line-height: 36px;
+  }
   .site-search-date_holder {
     padding-left: 16px;
   }
@@ -1872,7 +1882,7 @@ footer,footer a{
     text-align: left;
   }
   .row-internal-schooling ul {
-    padding-inline-start:10px;
+    padding-inline-start: 0px;
     padding-top: 20px;
     line-height: 1.36;
   }
