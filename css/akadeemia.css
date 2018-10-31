@@ -718,6 +718,10 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   font-weight: 500;
 }
 
+.row-table .table-header .table-cell.trainer {
+  cursor: pointer;
+}
+
 @media (max-width:425px){
   .site-search-date_holder {
     width:100%;
