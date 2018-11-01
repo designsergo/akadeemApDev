@@ -740,7 +740,18 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   }
  }
 
+ @media (min-width:768px) {
+  .indent {
+    color:#a71617;
+  }
+ }
+
  @media (max-width:768px){
+
+  .row-table .table-cell.short-description{
+    width: 95%;
+  }
+   
   .upcoming-box {
     background-color: rgba(138, 138, 138, 0.03);
   }
@@ -1282,7 +1293,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     margin-left: 18.02%;
     padding: 0px 15px 15px;
     padding-right: 8%;
-    width: 85%;
+   
   }
   .row-table .table-cell.short-description .button{
     border-radius: 1px;
