@@ -768,7 +768,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   }
   .title {
     font-size:14px !important;
-    line-height:22px !mportant;
+    line-height:22px !important;
   }
   .row-about .bg h2 {
     font-size: 26px !important;
@@ -796,31 +796,35 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
 
  .form--sendMail {
   width:95%;
-}
+  }
 
-.form--sendMail input {
+ .form--sendMail input {
   width:95%;
-}
+ }
 
-.form--sendMail .button {
+ .form--sendMail .button {
   width:95%;
   max-width: 320px;
-}
+ }
 
-.row-trainers-details .upcoming-box .upcoming {
+ .row-trainers-details .upcoming-box .upcoming {
   margin-left: 15px;
   width:95%;
-}
-
-.info #trainer-footer {
-  padding-left: 0px;
-}
-
-/* header nav ul li a {
-  font-size: 19px !important;
-} */
-
  }
+
+ .info #trainer-footer {
+  padding-left: 0px;
+ }
+}
+
+ @media (max-width:550px) {
+  .site-search-category_holder {
+    text-align: left !important; 
+   }
+   .site-search-date_holder {
+    padding-left: 0px !important; 
+   }
+}
 
  @media (min-width: 768px) {
   .modal-dialog{
