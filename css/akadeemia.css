@@ -844,6 +844,10 @@ nav ul li:nth-last-child(2) {
  }
 }
 
+.row-table .table-row .table-cell.more {
+  padding-top:32px;
+}
+
  @media (max-width:550px) {
   .site-search-category_holder {
     text-align: left !important; 
@@ -1002,7 +1006,7 @@ nav ul li:nth-last-child(2) {
  .row-table .table-row:hover .ap-table-order:before{content:"\e909"; -webkit-text-stroke: 2px #f3f3f3;}
  .asc .ap-table-order:before{content:"\e908"; -webkit-text-stroke: 2px #a71617;}
  .ap-table-order-asc:before{content:"\e908"}
- .row-table .table-row .ap-table-order-asc:before{content:"\e908"; -webkit-text-stroke: 2px white;}
+ .row-table .table-row .ap-table-order-asc:before{content:"\e908"; color:rgba(138, 138, 138, 0.2); -webkit-text-stroke: 2px white;}
  .row-table .table-row:hover .ap-table-order-asc:before{content:"\e908"; -webkit-text-stroke: 2px #f3f3f3;}
  .ap-icon-arrow-a-l:before{content:"\e907"}
  .ap-icon-close:before{content:"\e906"}
