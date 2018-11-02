@@ -658,7 +658,6 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   border: solid 2px #ffffff;
   background-color: #fdfdfd;
   margin: 0px 10px 65px 0px;
-  padding-left:5px;
   text-align: center;
   font-family: Roboto;
 }
@@ -666,14 +665,17 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   font-size:14px;
   font-weight:400;
   font-style: normal;
-  text-align:right;
-  padding-right:27px;
+  padding-left: 20px;
   background: url(https://i.gyazo.com/754bdef37d34b34f89ed698f890ad590.png) no-repeat left center;
-  /* text-align:center; */ /*.site-search-category is not alignec center so this shan't be either*/
+  text-align:center; 
 }
 
 .site-search-category_holder select{
-  /* text-align: center; */ /*not really supported by anything*/
+  text-align: center; 
+}
+
+.site-search-category select, select option {
+  text-align: center;
 }
 
 .site-search-date_delete {
@@ -996,12 +998,16 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  .ap-icon-arrow-l:before{content:"\e903"}
  .ap-icon-arrow-r:before{content:"\e902"}
  .ap-icon-arrow-a:before{content:"\e900"}
- .ap-icon-facebook:before{content:"\e901"}@-o-viewport{width:device-width;user-zoom:fixed}@viewport{width:device-width;user-zoom:fixed}html{position:relative;min-height:100%}
+ .ap-icon-facebook:before{content:"\e901";font-size: 19px;}@-o-viewport{width:device-width;user-zoom:fixed}@viewport{width:device-width;user-zoom:fixed}html{position:relative;min-height:100%}
  body{
    background-color:#FEFEFE;
    overflow-x:hidden;font-family:Roboto;
    margin-bottom:43px;
  }
+ .ap-icon-facebook:after{
+   content: "\00a0 Facebook";
+   font-size: 19px;
+   font-family: Roboto;}
  body.front{background:url(/wp-content/themes/Akadeemia/img/bg-red-2560.jpg) center 70px/200% no-repeat #d92027}
  a:active,a:focus,a:hover{text-decoration:none}
  h2{
