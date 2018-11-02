@@ -18,7 +18,6 @@
 <div class="container container-left">
 	<div class="row row-text row-internal-schooling antialias">
 		<div class="col-sm-10 col-lg-9 col-sm-offset-1">
-		    <h3><?= get_post_meta(get_the_ID(), 'meta_subtitle', true) ?></h3>
 			<h2><?= get_the_title(); ?></h2>
 			<br/>
 			<?php while ( have_posts() ) : the_post(); ?>
