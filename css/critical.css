@@ -250,11 +250,11 @@ header {
   z-index: 96;
 }
 header h1 {
-  //background:url(/wp-content/themes/Akadeemia/img/logo-akadeemia.svg) top center/contain no-repeat;
+  /* //background:url(/wp-content/themes/Akadeemia/img/logo-akadeemia.svg) top center/contain no-repeat; */
   background: url(/wp-content/themes/Akadeemia/img/logo-akadeemia-bw.svg) 20px
     10px / contain no-repeat;
   height: 50px;
-  //text-indent:200%;
+  /* //text-indent:200%; */
   white-space: nowrap;
   margin: 10px 0;
 }

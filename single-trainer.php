@@ -122,14 +122,14 @@
 						Hetkel koolitusi kalendris ei ole. Kui tunned huvi '; ?>
 						<? the_title(); ?>
 						<? echo ' koolituse või
-							sarnase teema vastu, siis anna meile sellest teda ja me võtame Sinuga ühendust.
+							sarnase teema vastu, siis anna meile sellest teada ja me võtame Sinuga ühendust.
 					</p>';
 					echo '<form class="form--sendMail" method="post" id="send-mail" >
 						<input id="sendmail-email" type="text" class="input"
-							placeholder="E-post" name="newsletter-email">
+							placeholder="Sinu e-post" name="newsletter-email">
 						<hr class="sendmail-hr">
 						<div id="sendmail-error" class="sendmail-error"></div>
-						<input class="button button--sm" type="submit" value="PALUN VÕTTA MINUGA ÜHENDUST" name="Submit">
+						<input class="button button--sm" type="submit" value="SOOVIN LISAINFOT" name="Submit">
 					</form>';
 
 					echo '<span class="sendmail_thanks">

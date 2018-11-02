@@ -39,7 +39,7 @@
 				</div>
 				<div class="site-search-date_holder" id="site-search-date_holder">
 					<input type="text" name="daterange" class="site-search-date"
-						id="site-search-date" value="" placeholder="Vali ajavahemik" />
+						id="site-search-date" value="" placeholder="Vali ajavahemik" readonly />
 					<span class="site-search-date_delete" id="site-search-date_delete"> x </span>
 				</div>
 		</div>
@@ -51,7 +51,7 @@
 				<div class="table-cell date asc active ">Kuupäev <span class="ap-table-order"></span></div>
 				<div class="table-cell title asc">Tutvustus <span class="ap-table-order"></span></div>
 				<div class="table-cell duration asc hidden-xs">Kestus <!--<span class="ap-table-order"></span>--></div>
-				<div class="table-cell trainer asc hidden-xs">Koolitaja</div>
+				<div class="table-cell trainer asc hidden-xs">Koolitaja <span class="ap-table-order"></span></div>
 				<div class="table-cell more hidden-xs"></div>
 			</div>
 
