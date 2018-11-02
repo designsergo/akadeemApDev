@@ -32,6 +32,7 @@
  @media (min-width:992px){
    .container{width:780px}
  }
+
  @media (max-width: 992px){
   .hidden-xs {
     font-size: 18px;
@@ -69,6 +70,12 @@
 @media (max-width:998px){
  .container{width:85%; margin-left:16%}
 }
+@media (max-width: 768px){
+  .container {
+      width: 98%;
+      margin-left:2%;
+  }
+}
 
 .row{margin-right:-15px;margin-left:-15px}.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9{position:relative;min-height:1px;padding-right:15px;padding-left:15px}.col-xs-12{width:100%}.col-xs-11{width:91.66666667%}.col-xs-10{width:83.33333333%}.col-xs-9{width:75%}.col-xs-8{width:66.66666667%}.col-xs-7{width:58.33333333%}.col-xs-6{width:50%}.col-xs-5{width:41.66666667%}.col-xs-4{width:33.33333333%}.col-xs-3{width:25%}.col-xs-2{width:16.66666667%}.col-xs-1{width:8.33333333%}.col-xs-pull-12{right:100%}.col-xs-pull-11{right:91.66666667%}.col-xs-pull-10{right:83.33333333%}.col-xs-pull-9{right:75%}.col-xs-pull-8{right:66.66666667%}.col-xs-pull-7{right:58.33333333%}.col-xs-pull-6{right:50%}.col-xs-pull-5{right:41.66666667%}.col-xs-pull-4{right:33.33333333%}.col-xs-pull-3{right:25%}.col-xs-pull-2{right:16.66666667%}.col-xs-pull-1{right:8.33333333%}.col-xs-pull-0{right:auto}.col-xs-push-12{left:100%}.col-xs-push-11{left:91.66666667%}.col-xs-push-10{left:83.33333333%}.col-xs-push-9{left:75%}.col-xs-push-8{left:66.66666667%}.col-xs-push-7{left:58.33333333%}.col-xs-push-6{left:50%}.col-xs-push-5{left:41.66666667%}.col-xs-push-4{left:33.33333333%}.col-xs-push-3{left:25%}.col-xs-push-2{left:16.66666667%}.col-xs-push-1{left:8.33333333%}.col-xs-push-0{left:auto}.col-xs-offset-12{margin-left:100%}.col-xs-offset-11{margin-left:91.66666667%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-0{margin-left:0}
 
@@ -100,7 +107,7 @@
   .col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-7{margin-left:58.33333333%}
   .col-sm-offset-6{margin-left:50%}.col-sm-offset-5{margin-left:41.66666667%}
   .col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-3{margin-left:25%}
-  .col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-1{margin-left:8.33333333%; margin-right:8.33333333%}
+  .col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-1{margin-left:100px; margin-right:100px}
   .col-sm-offset-0{margin-left:0}
 }
 
@@ -523,7 +530,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  }
  .site-search {
     width: 875px;
-    height: 30px; /* TODO */
+    height: 30px;
     font-family: Roboto;
     font-size: 18px;
     font-weight: 500;
@@ -534,6 +541,8 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     color: #424242;
     border: 0;
     height:60px;
+    background-color: #FBFBFB;
+    box-shadow: 0 0 4px 1px rgba(233, 233, 233, 0.5);
  }
  .site-search::placeholder {
   font-weight: 300;
@@ -569,8 +578,8 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  .btn-site-search-span {
    font-family: akadeemia!important;
    font-size: 24px;
-    speak: none;
-    font-style: normal;
+   speak: none;
+   font-style: normal;
     font-weight: 400;
     font-variant: normal;
     text-transform: none;
@@ -581,7 +590,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  .btn-site-search-span:before {
   height:30px;
   width: 30px;
-  padding: 20px 20px 20px 20px;
+  padding: 16px 18px 20px 18px;
   box-shadow: 0 0 10px 0 rgba(138, 138, 138, 0.2);
   position:relative;
   top:2px;
@@ -732,8 +741,12 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   font-weight: 500;
 }
 
+nav ul li:nth-last-child(2) {
+  margin-top:60px;
+}
+
 @media (max-width:425px){
-  .site-search-date_holder {
+  /* .site-search-date_holder {
     width:100%;
     height: 100px;
     margin-bottom: -100px;
@@ -746,11 +759,11 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   .site-search-category_holder {
     height: 100px;
     text-align:left;
-  }
+  } */
   .btn-site-search-span:before {
     position: relative;
-    top:10px;
-    right:15px;
+    top: 15px;
+    right: 25px;
   }
  }
 
@@ -801,7 +814,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     padding-right: 16px;
   }
   .site-search {
-    height:30px;
+    height:35px;
  }
  .btn-site-search-span:before {
   padding: 6px 6px 6px 6px;
@@ -1066,10 +1079,11 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  header .ap-icon-facebook{
    display:none;position:absolute;
    top:20px;
-   //right:20px;
+   /* //right:20px; */
    left: 20px;
    font-size:30px;
-   color:#fff;z-index:100
+   color:#fff;z-index:100;
+   margin-left: 30px;
  }
  header .ap-icon-facebook:hover{color:#47629c}
  header .burger{
@@ -1115,7 +1129,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  .row-intro{
    text-align:center;
    color: #8a8a8a;
-   margin-bottom:39px;
+   margin-bottom:10px;
    font-size: 18px;
    font-weight: normal;
    font-family: Roboto;
@@ -1400,11 +1414,11 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   .row-internal-schooling .bg{height:270px;margin-top:130px}
 
   .site-search-category{
-    width: 156px;
+    width: 95%;
   }
 
   .site-search-date {
-    width: 156px;
+    width: 85%;
     font-size: 13px;
   }
   .site-search-date::placeholder{
@@ -1540,7 +1554,7 @@ footer,footer a{
        -moz-transform:skew(-28.7deg);-ms-transform:skew(-28.7deg);
        transform:skew(-28.7deg);z-index:-1
      }
-     header .ap-icon-facebook{-webkit-transition:margin .2s ease-out;-moz-transition:margin .2s ease-out;transition:margin .2s ease-out;display:block;position:static;margin:30px 0 0 50px;color:#333;width:30px}
+     header .ap-icon-facebook{-webkit-transition:margin .2s ease-out;-moz-transition:margin .2s ease-out;transition:margin .2s ease-out;display:block;position:static;margin:0 0 0 50px;color:#333;width:30px}
      header .ap-icon-facebook:hover{color:#47629c}
      header.vertical{width:175px;z-index:2}
      header.vertical h1{background:url(/wp-content/themes/Akadeemia/img/logo-akadeemia-bw.svg) top center/contain no-repeat;width:77px;height:68px;margin-left:36px}
@@ -1736,7 +1750,7 @@ footer,footer a{
  @media (min-width:1000px)
  {
    .site-search {
-      width: 500px;
+      width: 80%;
    }
    .site-search-hr {
     width: 570px;
@@ -1754,6 +1768,9 @@ footer,footer a{
      text-align:center;
    }
    .row-intro a{float:right;margin-right:6px}
+   .row-intro h2 {
+     font-size: 36px;
+   }
  }
  @media (min-width:768px) and (max-width:1200px)
  {
@@ -1765,7 +1782,11 @@ footer,footer a{
    header{position:absolute}
    header .bg-slant{top:-822px}
    .row-intro{margin-bottom:80px}
-   .row-intro h2{font-size:38px}
+   .row-intro h2{
+    font-size: 28px;
+    width: 110%;
+    margin-left: -5%;
+}
    .row-intro a,.row-intro p{
      font-size:18px;
    }
@@ -1991,3 +2012,9 @@ footer,footer a{
 .sendmail_thanks {
  display: none;
 }
+
+@media (max-width: 1600px) and (min-width: 1250px){
+  .row-intro h2 {
+      font-size: 46px;
+  }
+  }
