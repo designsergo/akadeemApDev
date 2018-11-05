@@ -16,13 +16,13 @@
         </p>
         <form class="form--newsletter" method="post" id="send-newsletter" data-subdomain="apakadeemia">
 
-        <input id="newsletter-name" type="text" class="input" placeholder="Nimi" name="newsletter-name">
+        <input id="newsletter-name" type="text" class="input" placeholder="Nimi" name="newsletter-name" required>
           <div id="newsletter-error" class="error"></div>
 
           <hr class="modal-window-hr">
 
           <input type="hidden" value="" name="secretkey">
-          <input id="newsletter-email" type="text" class="input" placeholder="E-post" name="newsletter-email">
+          <input id="newsletter-email" type="email" class="input" placeholder="E-post" name="newsletter-email" required>
           
         <hr class="modal-window-hr">
           

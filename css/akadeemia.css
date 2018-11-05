@@ -32,6 +32,7 @@
  @media (min-width:992px){
    .container{width:780px}
  }
+
  @media (max-width: 992px){
   .hidden-xs {
     font-size: 18px;
@@ -100,7 +101,7 @@
   .col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-7{margin-left:58.33333333%}
   .col-sm-offset-6{margin-left:50%}.col-sm-offset-5{margin-left:41.66666667%}
   .col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-3{margin-left:25%}
-  .col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-1{margin-left:8.33333333%; margin-right:8.33333333%}
+  .col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-1{margin-left:100px; margin-right:100px}
   .col-sm-offset-0{margin-left:0}
 }
 
@@ -392,13 +393,17 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     max-width: 100%;
     /*border: 1px solid #e7e6e2;*/
     border: 0;
-    padding: 20px 0 0 0;
+    padding: 30px 0 0 0;
     font-size: 18px;
     margin-bottom: 10px;
     outline: none;
     font-family: Roboto;
     font-weight: 500;
     font-style: bold;
+  }
+  #send-newsletter:valid .button {
+    background : #57897c;
+    color:#ffffff;
   }
 
   ::-webkit-input-placeholder {color:#424242;
@@ -523,7 +528,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  }
  .site-search {
     width: 875px;
-    height: 30px; /* TODO */
+    height: 30px;
     font-family: Roboto;
     font-size: 18px;
     font-weight: 500;
@@ -534,6 +539,8 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
     color: #424242;
     border: 0;
     height:60px;
+    background-color: #FBFBFB;
+    box-shadow: 0 0 4px 1px rgba(233, 233, 233, 0.5);
  }
  .site-search::placeholder {
   font-weight: 300;
@@ -569,8 +576,8 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  .btn-site-search-span {
    font-family: akadeemia!important;
    font-size: 24px;
-    speak: none;
-    font-style: normal;
+   speak: none;
+   font-style: normal;
     font-weight: 400;
     font-variant: normal;
     text-transform: none;
@@ -581,7 +588,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  .btn-site-search-span:before {
   height:30px;
   width: 30px;
-  padding: 20px 20px 20px 20px;
+  padding: 16px 18px 20px 18px;
   box-shadow: 0 0 10px 0 rgba(138, 138, 138, 0.2);
   position:relative;
   top:2px;
@@ -658,7 +665,6 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   border: solid 2px #ffffff;
   background-color: #fdfdfd;
   margin: 0px 10px 65px 0px;
-  padding-left:5px;
   text-align: center;
   font-family: Roboto;
 }
@@ -666,14 +672,17 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   font-size:14px;
   font-weight:400;
   font-style: normal;
-  text-align:right;
-  padding-right:27px;
+  padding-left: 20px;
   background: url(https://i.gyazo.com/754bdef37d34b34f89ed698f890ad590.png) no-repeat left center;
-  /* text-align:center; */ /*.site-search-category is not alignec center so this shan't be either*/
+  text-align:center; 
 }
 
 .site-search-category_holder select{
-  /* text-align: center; */ /*not really supported by anything*/
+  text-align: center; 
+}
+
+.site-search-category select, select option {
+  text-align: center;
 }
 
 .site-search-date_delete {
@@ -728,6 +737,10 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
   font-size:18px;
   line-height:24px;
   font-weight: 500;
+}
+
+nav ul li:nth-last-child(2) {
+  margin-top:60px;
 }
 
 @media (max-width:425px){
@@ -996,12 +1009,16 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  .ap-icon-arrow-l:before{content:"\e903"}
  .ap-icon-arrow-r:before{content:"\e902"}
  .ap-icon-arrow-a:before{content:"\e900"}
- .ap-icon-facebook:before{content:"\e901"}@-o-viewport{width:device-width;user-zoom:fixed}@viewport{width:device-width;user-zoom:fixed}html{position:relative;min-height:100%}
+ .ap-icon-facebook:before{content:"\e901";font-size: 19px;}@-o-viewport{width:device-width;user-zoom:fixed}@viewport{width:device-width;user-zoom:fixed}html{position:relative;min-height:100%}
  body{
    background-color:#FEFEFE;
    overflow-x:hidden;font-family:Roboto;
    margin-bottom:43px;
  }
+ .ap-icon-facebook:after{
+   content: "\00a0 Facebook";
+   font-size: 19px;
+   font-family: Roboto;}
  body.front{background:url(/wp-content/themes/Akadeemia/img/bg-red-2560.jpg) center 70px/200% no-repeat #d92027}
  a:active,a:focus,a:hover{text-decoration:none}
  h2{
@@ -1060,10 +1077,11 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
  header .ap-icon-facebook{
    display:none;position:absolute;
    top:20px;
-   //right:20px;
+   /* //right:20px; */
    left: 20px;
    font-size:30px;
-   color:#fff;z-index:100
+   color:#fff;z-index:100;
+   margin-left: 30px;
  }
  header .ap-icon-facebook:hover{color:#47629c}
  header .burger{
@@ -1534,7 +1552,7 @@ footer,footer a{
        -moz-transform:skew(-28.7deg);-ms-transform:skew(-28.7deg);
        transform:skew(-28.7deg);z-index:-1
      }
-     header .ap-icon-facebook{-webkit-transition:margin .2s ease-out;-moz-transition:margin .2s ease-out;transition:margin .2s ease-out;display:block;position:static;margin:30px 0 0 50px;color:#333;width:30px}
+     header .ap-icon-facebook{-webkit-transition:margin .2s ease-out;-moz-transition:margin .2s ease-out;transition:margin .2s ease-out;display:block;position:static;margin:0 0 0 50px;color:#333;width:30px}
      header .ap-icon-facebook:hover{color:#47629c}
      header.vertical{width:175px;z-index:2}
      header.vertical h1{background:url(/wp-content/themes/Akadeemia/img/logo-akadeemia-bw.svg) top center/contain no-repeat;width:77px;height:68px;margin-left:36px}
@@ -1730,7 +1748,7 @@ footer,footer a{
  @media (min-width:1000px)
  {
    .site-search {
-      width: 500px;
+      width: 80%;
    }
    .site-search-hr {
     width: 570px;
@@ -1748,6 +1766,9 @@ footer,footer a{
      text-align:center;
    }
    .row-intro a{float:right;margin-right:6px}
+   .row-intro h2 {
+     font-size: 36px;
+   }
  }
  @media (min-width:768px) and (max-width:1200px)
  {
@@ -1759,7 +1780,11 @@ footer,footer a{
    header{position:absolute}
    header .bg-slant{top:-822px}
    .row-intro{margin-bottom:80px}
-   .row-intro h2{font-size:38px}
+   .row-intro h2{
+    font-size: 28px;
+    width: 110%;
+    margin-left: -5%;
+}
    .row-intro a,.row-intro p{
      font-size:18px;
    }
@@ -1985,3 +2010,9 @@ footer,footer a{
 .sendmail_thanks {
  display: none;
 }
+
+@media (max-width: 1600px) and (min-width: 1250px){
+  .row-intro h2 {
+      font-size: 46px;
+  }
+  }
