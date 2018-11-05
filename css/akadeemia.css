@@ -848,6 +848,10 @@ nav ul li:nth-last-child(2) {
   padding-top:32px;
 }
 
+.row-intro p {
+  margin-bottom:20px;
+}
+
  @media (max-width:550px) {
   .site-search-category_holder {
     text-align: left !important; 
@@ -1770,6 +1774,9 @@ footer,footer a{
    .search-header{right:42px}.bg-logo{display:none}
    .row-intro h2,.row-intro p{
      text-align:center;
+   }
+   .row-intro p{
+    margin-bottom:30px;
    }
    .row-intro a{float:right;margin-right:6px}
    .row-intro h2 {
