@@ -31,7 +31,7 @@
                aria-label="Otsi koolitusi, koolitajaid või koolitusteemasid">
 				<!--<input type="submit" class="btn-site-search" value="Otsi">-->
 				<span class="btn-site-search-span"></span>
-				<hr class="site-search-hr">
+				
 				<div class="site-search-category_holder" id="site-search-category_holder">
 					<select name="site-search-category" class="site-search-category" id="site-search-category">
 						<option value="-">Vali kategooria</option>
