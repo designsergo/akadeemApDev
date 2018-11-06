@@ -125,8 +125,8 @@
 							sarnase teema vastu, siis anna meile sellest teada ja me võtame Sinuga ühendust.
 					</p>';
 					echo '<form class="form--sendMail" method="post" id="send-mail" >
-						<input id="sendmail-email" type="text" class="input"
-							placeholder="Sinu e-post" name="newsletter-email">
+						<input id="sendmail-email" type="email" class="input"
+							placeholder="Sinu e-post" name="newsletter-email" required>
 						<hr class="sendmail-hr">
 						<div id="sendmail-error" class="sendmail-error"></div>
 						<input class="button button--sm" type="submit" value="SOOVIN LISAINFOT" name="Submit">
