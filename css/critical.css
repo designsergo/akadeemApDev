@@ -445,8 +445,8 @@ header .search span:nth-child(2) {
 }
 .row-table .table-cell h3 {
   font-size: 16px;
-  //margin:10px 0 3px;
-  margin: 0px 0 3px;
+  /* //margin:10px 0 3px; */
+  margin: 0px 0 0px;
 }
 .row-table .table-cell p {
   margin-bottom: 15px;
@@ -605,25 +605,25 @@ header .search span:nth-child(2) {
     font-weight: 600;
   }
   .row-table .table-cell {
-    //vertical-align:middle;
+    /* //vertical-align:middle; */
     display: inline-block;
   }
   .row-table .table-cell h3 {
-    //margin-top:20px;
+    /* //margin-top:20px; */
   }
   .row-table .table-cell.date {
     width: 13.02%;
-    //padding:0 0 0 30px;
+    /* //padding:0 0 0 30px; */
     white-space: normal;
   }
   .row-table .table-cell.title {
     display: inline-block;
     width: 42.33%;
-    //padding:0
+    /* //padding:0 */
   }
   .row-table .table-cell.duration {
     width: 14.29%;
-    //padding-left:10px;
+    /* //padding-left:10px; */
   }
   .row-table .table-cell.more {
     padding-right: 15px;

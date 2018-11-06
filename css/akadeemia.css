@@ -120,7 +120,7 @@
   .col-lg-12{width:100%}
   .col-lg-11{width:91.66666667%}
   .col-lg-10{
-    //width:83.33333333%;
+    /* //width:83.33333333%; */
     width:89.33333333%;
   }
   .col-lg-9{width:75%}
@@ -602,7 +602,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
    margin-top: 0px;
    margin-bottom: 27px;
    height: 0px;
-   box-shadow: 0 0 4px 1px rgba(233, 233, 233, 0.5);
+   border-top: 1px solid transparent;
  }
  .site-search-holder {
    text-align: center;
@@ -689,6 +689,8 @@ caption{padding-top:8px;padding-bottom:8px;color:#777}.table{width:100%;max-widt
 
 .site-search-date_delete {
   cursor: pointer;
+  position: relative;
+  right: 25px;
 }
 
 .form--sendMail {
@@ -1269,7 +1271,7 @@ nav ul li:nth-last-child(2) {
     font-size:16px;
     line-height: 1.38;
     /* //margin:10px 0 3px; */
-    margin:0px 0 3px;
+    margin:0px 0 0px;
     padding-bottom:5px;
   }
   .row-table .table-cell .ap-table-order {
@@ -1947,7 +1949,6 @@ footer,footer a{
     font-size: 14px;
   }
   .row-table .table-cell.short-description .register {
-    margin-left:8px;
     margin-right:8px;
   }
   .row-table .table-cell.short-description .info {
