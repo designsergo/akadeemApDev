@@ -150,9 +150,9 @@ header nav {
     font-size: 18;
     display: none !important;
   }
-  .product-categories {
+  /* .product-categories {
     display: none !important;
-  }
+  } */
 }
 @font-face {
   font-family: Exo;
@@ -210,7 +210,7 @@ header nav {
   content: "\e900";
 }
 .ap-icon-facebook:before {
-  content: url(../img/flogo.png);
+  content: "\e901";
 }
 @-o-viewport {
   width: device-width;

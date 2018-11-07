@@ -14,6 +14,11 @@
  dt,kbd kbd,label{font-weight:700}
  address,blockquote .small,blockquote footer,blockquote small,dd,dt,pre{line-height:1.42857143}
 
+ iframe {
+  align-items: left;
+  width:95%;
+}
+
  @media(min-width:768px){
    .lead{font-size:21px}
  }
@@ -38,9 +43,9 @@
     font-size: 18px;
     display: none!important;
   }
-  .product-categories {
+  /* .product-categories {
     display: none !important;
-  }
+  } */
   .row-table .table-cell.title{
     width:60.33%;
  }
@@ -750,6 +755,8 @@ input:focus::-webkit-input-placeholder {
   box-shadow: 0 0 4px 0 rgba(233, 233, 233, 0.5);
   border: solid 1px #e9e9e9;
   background-color: #e9e9e9;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .details {
@@ -788,6 +795,16 @@ nav ul li:nth-last-child(2) {
   }
  }
 
+ @media (max-width:992px) {
+  .product-categories{
+    position: relative;
+    top: 0px;
+    margin-top:5px;
+    margin-bottom:5px;
+    text-align: left;
+  }
+}
+
  @media (min-width:768px) {
   .indent {
     color:#a71617;
@@ -801,7 +818,8 @@ nav ul li:nth-last-child(2) {
   }
    
   .upcoming-box {
-    background-color: rgba(138, 138, 138, 0.03);
+    background-color: rgba(138, 138, 138, 0.03);    
+    padding-left: 5px;
   }
   .row-trainers-page h2,
   .row-contact-page h2 {
@@ -861,7 +879,7 @@ nav ul li:nth-last-child(2) {
  }
 
  .info #trainer-footer {
-  padding-left: 0px;
+  padding-left: 5px;
  }
 }
 
@@ -951,9 +969,9 @@ nav ul li:nth-last-child(2) {
    .hidden-xs{display:none!important;
     font-size: 18px; /*Sergei 23.10*/}
 
-  .product-categories {
+  /* .product-categories {
     display: none !important;
-  }
+  } */
  }
  @media (max-width:720px){
    .site-search {
@@ -1040,7 +1058,7 @@ nav ul li:nth-last-child(2) {
  .ap-icon-arrow-l:before{content:"\e903"}
  .ap-icon-arrow-r:before{content:"\e902"}
  .ap-icon-arrow-a:before{content:"\e900"}
- .ap-icon-facebook:before{content: url(../img/flogo.png);font-size: 19px;}@-o-viewport{width:device-width;user-zoom:fixed}@viewport{width:device-width;user-zoom:fixed}html{position:relative;min-height:100%}
+ .ap-icon-facebook:before{content:"\e901";font-size: 19px;}@-o-viewport{width:device-width;user-zoom:fixed}@viewport{width:device-width;user-zoom:fixed}html{position:relative;min-height:100%}
  body{
    background-color:#FEFEFE;
    overflow-x:hidden;font-family:Roboto;
@@ -1049,7 +1067,9 @@ nav ul li:nth-last-child(2) {
  .ap-icon-facebook:after{
    content: "\00a0 Facebook";
    font-size: 19px;
-   font-family: Roboto;}
+   font-weight:400;
+   font-family: Roboto;
+  }
  body.front{background:url(/wp-content/themes/Akadeemia/img/bg-red-2560.jpg) center 70px/200% no-repeat #d92027}
  a:active,a:focus,a:hover{text-decoration:none}
  h2{
@@ -1155,6 +1175,12 @@ nav ul li:nth-last-child(2) {
  :-moz-placeholder{color:#fff;opacity:1}
  ::-moz-placeholder{color:#fff;opacity:1}
  :-ms-input-placeholder{color:#fff}*/
+
+ @media (max-width: 768px) {
+  header .ap-icon-facebook{
+    top:460px;
+  }
+ }
  .row-intro{
    text-align:center;
    color: #8a8a8a;
@@ -1255,7 +1281,8 @@ nav ul li:nth-last-child(2) {
   header h1.indent {
     /*text-indent:0;*/
     /*background:url(/wp-content/themes/Akadeemia/img/logo_akadeemia_mobile.png) 20px 10px/contain no-repeat;*/
-    background:url(/wp-content/themes/Akadeemia/img/logo_akadeemia_mobile.png) 0px 0px/contain no-repeat;
+    background:url(/wp-content/themes/Akadeemia/img/logo_akadeemia_mobile.png) 0px 0px/contain no-repeat;    
+    margin-left: 7px;
 
   }
   .row-text{margin:80px 0}
@@ -1611,7 +1638,7 @@ footer,footer a{
        -moz-transform:none;-ms-transform:none;transform:none;top:-600px;
        left:-425px;bottom:0
      }
-     header.vertical .ap-icon-facebook{margin-left:36px}
+     header.vertical .ap-icon-facebook{margin-left:28px}
      header.vertical:not(.slant) .ap-icon-facebook{color:#fff}
      header.vertical:not(.slant) .ap-icon-facebook:hover{color:#47629c}
      header.vertical.slant .bg-slant{background:#fff}
@@ -1911,6 +1938,7 @@ footer,footer a{
   .row-intro {margin-top: 70px;}
   header.vertical{
     background-color: #a71617;
+    border-bottom: 1px solid #a71617
   }
   .site-search {
      width: 85%;
@@ -1935,6 +1963,7 @@ footer,footer a{
   }
   header.vertical{
     background-color: #a71617;
+    border-bottom: 1px solid #a71617
   }
   .row-intro {
     margin-top: 70px;
