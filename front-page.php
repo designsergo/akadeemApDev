@@ -25,12 +25,16 @@
 
 	<div class="row antialias">
 		<div class="col-md-11 col-lg-10 col-sm-offset-1 site-search-holder">
-
-				<input type="search" id="site-search" name="site-search" class="site-search"
+				
+			<div class="input-group">
+			<input type="search" id="site-search" name="site-search" class="site-search"
                placeholder="Otsi koolitusi, koolitajaid või koolitusteemasid"
                aria-label="Otsi koolitusi, koolitajaid või koolitusteemasid">
+				<div class="input-group-addon"><span class="btn-site-search-span"></span></div>
+			</div>
+				
 				<!--<input type="submit" class="btn-site-search" value="Otsi">-->
-				<span class="btn-site-search-span"></span>
+				
 				
 				<div class="site-search-category_holder" id="site-search-category_holder">
 					<select name="site-search-category" class="site-search-category" id="site-search-category">
