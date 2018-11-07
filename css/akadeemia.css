@@ -787,6 +787,14 @@ nav ul li:nth-last-child(2) {
   margin-top:60px;
 }
 
+.no-trainings-message {
+  text-align:center;
+  padding-top:30px;
+  padding-bottom:20px;
+  font-style:Roboto;
+  font-weight:500;
+}
+
 @media (max-width:425px){
   /* .site-search-date_holder {
     width:100%;
@@ -1148,7 +1156,7 @@ nav ul li:nth-last-child(2) {
    color:#fff;z-index:100;
    margin-left: 30px;
  }
- header .ap-icon-facebook:hover{color:#47629c}
+ header .ap-icon-facebook:hover{color:#fff}
  header .burger{
    width:72px;height:72px;top:0;
    /* //left:0; */
@@ -1625,7 +1633,7 @@ footer,footer a{
        transform:skew(-28.7deg);z-index:-1
      }
      header .ap-icon-facebook{-webkit-transition:margin .2s ease-out;-moz-transition:margin .2s ease-out;transition:margin .2s ease-out;display:block;position:static;margin:0 0 0 50px;color:#333;width:30px}
-     header .ap-icon-facebook:hover{color:#47629c}
+     header .ap-icon-facebook:hover{color:#fff}
      header.vertical{width:175px;z-index:2}
      header.vertical h1{background:url(/wp-content/themes/Akadeemia/img/logo-akadeemia-bw.svg) top center/contain no-repeat;width:77px;height:68px;margin-left:36px}
      header.vertical.slant h1{background:url(/wp-content/themes/Akadeemia/img/logo-akadeemia.svg) top left/200px 67px no-repeat}
@@ -1654,7 +1662,7 @@ footer,footer a{
      }
      header.vertical .ap-icon-facebook{margin-left:28px}
      header.vertical:not(.slant) .ap-icon-facebook{color:#fff}
-     header.vertical:not(.slant) .ap-icon-facebook:hover{color:#47629c}
+     header.vertical:not(.slant) .ap-icon-facebook:hover{color:#fff}
      header.vertical.slant .bg-slant{background:#fff}
      .search-header{display:block;background:0 0;position:absolute;top:30px;right:169px;left:auto;margin-top:0;padding:0 8px;z-index:2}
      .search-header input{border:none;font:18px/24px Roboto;width:162px;height:24px;padding:0 8px 0 0}.search-header .ap-icon-search{border:none;vertical-align:sub;font-size:22px;line-height:25px;cursor:pointer;padding:0 8px 0 0;height:auto;float:none;border-right:1px solid rgba(255,255,255,.5)}.light .search-header,.light .search-header .ap-icon-search{border-color:#424242;color:#424242}.light ::-webkit-input-placeholder{color:#424242}.light :-moz-placeholder{color:#424242;opacity:1}.light ::-moz-placeholder{color:#424242;opacity:1}.light :-ms-input-placeholder{color:#424242}.bg-logo{position:absolute;width:526px;top:0;right:-205px;z-index:-1}

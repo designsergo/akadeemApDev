@@ -662,46 +662,53 @@ function searchTrainingsArray(sort, order, skip) {
 }
 
 function showTrainings(trainingsList) {
-	$('#trainings-table .placeholder, #trainings-table .table-row, #trainings-table .table-footer').remove();
+	$('#trainings-table .placeholder, #trainings-table .table-row, #trainings-table .table-footer, #trainings-table .no-trainings-message').remove();
 
-	$(trainingsList).each(function (index) {
-		var item = $(this)[0];
-		var category = '<div class="product-categories"> <span class="product-categories-title">KATEGOORIA: </span>';
-		if (item.ProductCategories) {
-			for (var count = 0; count < item.ProductCategories.length; count++) {
-				category += item.ProductCategories[count] + ', ';
+	if (trainingsList.length > 0) {
+
+		$(trainingsList).each(function (index) {
+			var item = $(this)[0];
+			var category = '<div class="product-categories"> <span class="product-categories-title">KATEGOORIA: </span>';
+			if (item.ProductCategories) {
+				for (var count = 0; count < item.ProductCategories.length; count++) {
+					category += item.ProductCategories[count] + ', ';
+				}
+				if (item.ProductCategories.length > 0) {
+					category = category.substring(0, category.length - 2);
+				}
 			}
-			if (item.ProductCategories.length > 0) {
-				category = category.substring(0, category.length - 2);
-			}
-		}
-		category += '</div>';
+			category += '</div>';
 
-		var template = '<div class="table-row table-row-open" id="table-row-' + item.Id + '" id-nr="' + item.Id + '">' +
-			'' +
-			'<div class="table-cell date">' + item.date + '</div>' +
-			'<div class="table-cell title"><h3>' + item.Name + '</h3><p>' + item.subtitle + '</p></div>' +
-			'<div class="table-cell duration hidden-xs">' + item.duration + '</div>' +
-			'<div class="table-cell trainer hidden-xs">' + item.trainer + '</div>' +
-			'<div class="table-cell more"><span class="text hidden-xs"></span>' +
-			'<span class="ap-table-order hidden" id="ap-table-order-' + item.Id + '"></span><span class="ap-table-order-asc" id="ap-table-order-asc-' + item.Id + '"></span></div>' +
-			'<div class="table-cell short-description hidden" id="short-description-' + item.Id + '">' + item.ShortDescription +
-			category +
-			'<div> <a class="button register" href="http://pood.aripaev.ee/Product/ProductDetails?productId=' + item.Id + '#registreerimine" target="_blank">Registreeru</a>' +
-			'<a class="button info" href="http://pood.aripaev.ee/Product/ProductDetails?productId=' + item.Id + '" target="_blank">Lisainfo</a>' +
-			'</div>' +
-			'</div>' +
-			'' +
-			'</div>';
+			let template = '<div class="table-row table-row-open" id="table-row-' + item.Id + '" id-nr="' + item.Id + '">' +
+				'' +
+				'<div class="table-cell date">' + item.date + '</div>' +
+				'<div class="table-cell title"><h3>' + item.Name + '</h3><p>' + item.subtitle + '</p></div>' +
+				'<div class="table-cell duration hidden-xs">' + item.duration + '</div>' +
+				'<div class="table-cell trainer hidden-xs">' + item.trainer + '</div>' +
+				'<div class="table-cell more"><span class="text hidden-xs"></span>' +
+				'<span class="ap-table-order hidden" id="ap-table-order-' + item.Id + '"></span><span class="ap-table-order-asc" id="ap-table-order-asc-' + item.Id + '"></span></div>' +
+				'<div class="table-cell short-description hidden" id="short-description-' + item.Id + '">' + item.ShortDescription +
+				category +
+				'<div> <a class="button register" href="http://pood.aripaev.ee/Product/ProductDetails?productId=' + item.Id + '#registreerimine" target="_blank">Registreeru</a>' +
+				'<a class="button info" href="http://pood.aripaev.ee/Product/ProductDetails?productId=' + item.Id + '" target="_blank">Lisainfo</a>' +
+				'</div>' +
+				'</div>' +
+				'' +
+				'</div>';
 
 
-		//<a href="http://pood.aripaev.ee/Product/ProductDetails?productId='+item.Id+'" target="_blank">
-		//</a>
+			//<a href="http://pood.aripaev.ee/Product/ProductDetails?productId='+item.Id+'" target="_blank">
+			//</a>
 
+			$('#trainings-table .items').append(template);
+
+
+		});
+
+	} else {
+		let template = '<p class="no-trainings-message">Selliseid koolitusi pole</p>';
 		$('#trainings-table .items').append(template);
-
-
-	});
+	}
 
 	// row click bind
 	$('#trainings-table .table-row-open').click(function (e) {
