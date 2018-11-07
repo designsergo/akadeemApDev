@@ -210,7 +210,7 @@ header nav {
   content: "\e900";
 }
 .ap-icon-facebook:before {
-  content: "\e901";
+  content: url(../img/flogo.png);
 }
 @-o-viewport {
   width: device-width;

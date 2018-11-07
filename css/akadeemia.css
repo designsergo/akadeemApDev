@@ -1040,7 +1040,7 @@ nav ul li:nth-last-child(2) {
  .ap-icon-arrow-l:before{content:"\e903"}
  .ap-icon-arrow-r:before{content:"\e902"}
  .ap-icon-arrow-a:before{content:"\e900"}
- .ap-icon-facebook:before{content:"\e901";font-size: 19px;}@-o-viewport{width:device-width;user-zoom:fixed}@viewport{width:device-width;user-zoom:fixed}html{position:relative;min-height:100%}
+ .ap-icon-facebook:before{content: url(../img/flogo.png);font-size: 19px;}@-o-viewport{width:device-width;user-zoom:fixed}@viewport{width:device-width;user-zoom:fixed}html{position:relative;min-height:100%}
  body{
    background-color:#FEFEFE;
    overflow-x:hidden;font-family:Roboto;
