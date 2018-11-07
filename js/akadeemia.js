@@ -120,7 +120,8 @@ function initAboutGallery(action) {
 }
 */
 
-
+var startDate = false;
+var endDate = false;
 $(function() {
 	$('input[name="daterange"]').daterangepicker({
 		autoUpdateInput: false,
@@ -131,21 +132,30 @@ $(function() {
 
 	$('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
       $(this).val(picker.startDate.format('DD.MM.YYYY') + ' - ' + picker.endDate.format('DD.MM.YYYY'));
-			console.log(picker.startDate, picker.endDate);
+			//console.log(picker.startDate, picker.endDate);
+			startDate = picker.startDate;
+			endDate = picker.endDate;
+			searchTrainingsArray();
   });
 
 	$('input[name="daterange"]').on('cancel.daterangepicker', function(ev, picker) {
       $(this).val('');
+			startDate = false;
+			endDate = false;
+			searchTrainingsArray();
   });
 });
 
 $( "#site-search-date_delete" ).click(function() {
 	$('#site-search-date').val('');
+	startDate = false;
+	endDate = false;
+	searchTrainingsArray();
 });
 
-$('#site-search-date').on('input', function() {
-    alert( "Handler for input() called." );
-});
+//$('#site-search-date').on('input', function() {
+//    alert( "Handler for input() called." );
+//});
 
 
 /*** TRAININGS ***/
@@ -155,6 +165,7 @@ var activeSort = 'EventStartDate',
 	activeOffset = 0;
 var dataLoaded = "loadTrainings";
 var trainingsList = [];
+var trainingsListFull = [];		// not filtered with search
 var categoryList = [];
 var dateList = [];
 
@@ -235,12 +246,16 @@ function loadTrainings(sort, order, skip) {
 				lastName = (item.Persons[0].LastName) ? item.Persons[0].LastName : item.Persons[0].Person.LastName;
 			}
 			var trainerName = '';
+			var trainerNameList = []; // used for search
 			for(var count = 0; count < item.Persons.length; count++) {
 				//if ("Performer" == item.Persons[count].PersonType) {
 				if ("Performer" == item.Persons[count].Type) {
 					firstNameTmp = (item.Persons[count].FirstName) ? item.Persons[count].FirstName : item.Persons[count].Person.FirstName;
 					lastNameTmp = (item.Persons[count].LastName) ? item.Persons[count].LastName : item.Persons[count].Person.LastName;
 					trainerName += firstNameTmp + ' ' + lastNameTmp + ',<BR>';
+					trainerNameList.push(firstNameTmp.trim().toUpperCase());
+					trainerNameList.push(lastNameTmp.trim().toUpperCase());
+					trainerNameList.push(firstNameTmp.trim().toUpperCase() + ' ' + lastNameTmp.trim().toUpperCase());
 				}
 			}
 			if (trainerName.length > 3) {
@@ -272,6 +287,11 @@ function loadTrainings(sort, order, skip) {
 				categories = categories.substring(0, categories.length-5);
 			}
 
+			var tags = [];
+			for(var count = 0; count < item.ProductTags.length; count++) {
+				tags.push(item.ProductTags[count].toUpperCase());
+			}
+
 			subtitle = (item.SubTitle !== null) ? item.SubTitle :'';
 
 			//var dateObj = formatDate(item.EventStartDateTimeUtc);
@@ -294,6 +314,8 @@ function loadTrainings(sort, order, skip) {
 				trainer: trainerName,
 				ShortDescription: item.ShortDescription,
 				ProductCategories: categories,
+				ProductTags: tags,
+				trainerNameList: trainerNameList,
 			};
 
 			trainingsList.push(trainingRow);
@@ -354,16 +376,15 @@ function loadTrainings(sort, order, skip) {
 		});
 		*/
 
-		trainingsList.sort(sortTrainingsByNameAsc);
+		//trainingsList.sort(sortTrainingsByNameAsc);
+		trainingsList.sort(sortTrainingsByDateAsc);
 
 		// row click bind
 	//	$('#trainings-table .table-row-open').click(function(e) {
 	//		rowClick( $(this) );
 	//	});
 
-		console.log(trainingsList);
-		console.log(categoryList);
-		console.log(dateList);
+		trainingsListFull = trainingsList;
 		showTrainings(trainingsList);
 	});
 }
@@ -421,6 +442,23 @@ function sortTrainingsByDurationDesc(a, b) {
   }
 }
 
+function sortTrainingsByPersonAsc(a, b) {
+  if (a.trainer === b.trainer) {
+      return 0;
+  }
+  else {
+      return (a.trainer < b.trainer) ? -1 : 1;
+  }
+}
+function sortTrainingsByPersonDesc(a, b) {
+  if (a.trainer === b.trainer) {
+      return 0;
+  }
+  else {
+      return (a.trainer < b.trainer) ? 1 : -1;
+  }
+}
+
 function rowClick(obj) {
 	//if (obj.hasClass("passive")) return;
 
@@ -430,8 +468,8 @@ function rowClick(obj) {
 	var orderAscId = '#ap-table-order-asc-'+idNr;
 
 	// reset all arrows
-	$('.ap-table-order-asc').removeClass("hidden");
-	$('.ap-table-order').addClass("hidden");
+	$('.ap-table-order-asc', '.table-row').removeClass("hidden");
+	$('.ap-table-order', '.table-row').addClass("hidden");
 
 	if ($(moreTextId).hasClass("hidden")) {
 		$(orderId).removeClass("hidden");
@@ -534,10 +572,93 @@ function searchTrainings(search, sort, order, skip) {
 		});
 
 		trainingsList.sort(sortTrainingsByDateAsc);
+		trainingsListFull = trainingsList;
 		showTrainings(trainingsList);
 
 	});
 
+}
+
+// search from array
+function searchTrainingsArray(sort, order, skip) {
+	searchField = $("#site-search").val().toUpperCase();
+	searchCategory = $("#site-search-category").val();
+
+	var trainingsListFiltered = [];
+
+	sort = typeof sort !== 'undefined' ? sort : 'EventStartDate';
+	order = typeof order !== 'undefined' ? order : 'asc';
+	skip = typeof skip !== 'undefined' ? skip : 0;
+
+	dataLoaded = "searchTrainingsArray";
+
+	$(trainingsListFull).each(function(index) {
+		var item = $(this)[0];
+		var found = false;
+
+		if (0 < searchField.length){
+			var itemName = item.Name.toUpperCase();
+			var itemSubtitle = item.subtitle.toUpperCase();
+			var shortDescription = null == item.ShortDescription ? '' : item.ShortDescription.toUpperCase();
+
+			var itemCategory = false;
+			if ('-' != searchCategory) {
+				if ( 0 <= item.ProductCategories.indexOf(searchCategory)) {
+					itemCategory = true;
+				}
+			} else {
+				itemCategory = true; // no need to refine search
+			}
+
+			if (itemCategory) {
+				if (-1 != itemName.search(searchField) || -1 != itemSubtitle.search(searchField)
+					|| -1 != shortDescription.search(searchField) ) {
+					found = true;
+				}
+				if (0 <= item.ProductTags.indexOf(searchField) ) {
+					found = true;
+				}
+				if (0 <= item.trainerNameList.indexOf(searchField) ) {
+					found = true;
+				}
+			}
+
+		}
+		else {
+			// search field is empty
+			if ('-' != searchCategory) {
+				if ( 0 <= item.ProductCategories.indexOf(searchCategory)) {
+					found = true;
+				}
+			}
+		}
+
+		if ( false != startDate && false != endDate) {
+			if (item.startDate > startDate && item.startDate < endDate) {
+				if( 0 == searchField.length && '-' == searchCategory ) {
+					found = true;
+				}
+			}
+			else {
+				found = false;
+			}
+		}
+
+		// if no search selected
+		if (0 == searchField.length && '-' == searchCategory
+			&& !startDate && !endDate) {
+			found = true;
+		}
+
+		if (found) {
+			trainingsListFiltered.push(item);
+		}
+	});
+
+	trainingsListFiltered.sort(sortTrainingsByDateAsc);
+	console.log(trainingsListFiltered);
+	trainingsList = trainingsListFiltered; // for use in sorting
+	showTrainings(trainingsListFiltered);
 }
 
 function showTrainings(trainingsList) {
@@ -546,11 +667,13 @@ function showTrainings(trainingsList) {
 	$(trainingsList).each(function(index) {
 		var item = $(this)[0];
 		var category = '<div class="product-categories"> <span class="product-categories-title">KATEGOORIA: </span>';
-		for(var count = 0; count < item.ProductCategories.length; count++) {
-			category += item.ProductCategories[count] + ', ';
-		}
-		if (item.ProductCategories.length > 0) {
-			category = category.substring(0, category.length-2);
+		if(item.ProductCategories) {
+			for(var count = 0; count < item.ProductCategories.length; count++) {
+				category += item.ProductCategories[count] + ', ';
+			}
+			if (item.ProductCategories.length > 0) {
+				category = category.substring(0, category.length-2);
+			}
 		}
 		category += '</div>';
 
@@ -699,9 +822,29 @@ function initTrainings() {
 		}
 	});*/
 
-	/*$('#trainings-table .table-cell.trainer').click(function() {
-		refreshTrainings('ProductPersons/Person/LastName', $(this));
-	});*/
+	$('#trainings-table .table-cell.trainer').click(function() {
+		if (dataLoaded == "loadTrainings") {
+			refreshTrainings('ProductPersons/Person/LastName', $(this), activeOffset);
+			activeSort = 'Name';
+		}
+		else {
+			if ( $(this).hasClass('asc') ) {
+				trainingsList.sort(sortTrainingsByPersonAsc);
+				showTrainings(trainingsList);
+			}
+			else {
+				trainingsList.sort(sortTrainingsByPersonDesc);
+				showTrainings(trainingsList);
+			}
+			$(this).toggleClass('asc');
+
+			if ( !$(this).hasClass('active') ) {
+				$(this).addClass('active').siblings().removeClass('active');
+				$(this).siblings().addClass('passive');
+			}
+		}
+		//refreshTrainings('ProductPersons/Person/LastName', $(this));
+	});
 
 }
 
@@ -717,12 +860,17 @@ $.fn.enterKey = function (fnc) {
 }
 $("#site-search").enterKey(function () {
 
-		searchTrainings($("#site-search").val());
+		//searchTrainings($("#site-search").val());
+		searchTrainingsArray();
 
 })
 $('.btn-site-search-span').click(function() {
-		searchTrainings($("#site-search").val());
+		//searchTrainings($("#site-search").val());
+		searchTrainingsArray();
 });
+$("#site-search-category").change(function () {
+		searchTrainingsArray();
+})
 
 if ( $('#trainer-footer').length > 0 ){
 	$( "#trainer-footer" ).html( $( "#footer-text" ).html() );
@@ -1109,6 +1257,7 @@ var sendMail = {
     var object = this;
     //var signupName = $.trim($("#newsletter-name").val());
     var signupEmail = $("#sendmail-email").val();
+		var trainerName = $("#trainer_name").text().trim();
     //var signupSubdomain = $('#send-newsletter').data('subdomain');
     var errorField = $("#sendmail-error").empty();
     //var loading = $("#modal-newsletter .loading, #modal-newsletter .loading-overlay");
@@ -1122,7 +1271,8 @@ var sendMail = {
 
     $.ajax({
         method: 'GET',
-        url: '/sendm/?email='+signupEmail
+        url: '/sendm?email='+encodeURIComponent(signupEmail) + '&trainername=' + encodeURIComponent(trainerName),
+
     }).done(function(data) {
       //  data = object.cleanResult(data);
 
