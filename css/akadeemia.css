@@ -19,6 +19,16 @@
   width:95%;
 }
 
+#footer-text a {
+  font-size:16px;
+}
+
+@media (max-width:768px) {
+  #footer-text a {
+    font-size:14px;
+  }
+}
+
  @media(min-width:768px){
    .lead{font-size:21px}
  }
@@ -77,9 +87,12 @@
 }
 @media (max-width: 768px){
   .container {
-      width: 100%;
-      margin-left:0px;
-      margin-left:0px;
+    width: 100%;
+    margin-left:0px;
+    margin-left:0px;
+  }
+  footer {
+    margin-left: -14px !important;
   }
 }
 
