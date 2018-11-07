@@ -150,9 +150,9 @@ header nav {
     font-size: 18;
     display: none !important;
   }
-  .product-categories {
+  /* .product-categories {
     display: none !important;
-  }
+  } */
 }
 @font-face {
   font-family: Exo;
@@ -278,7 +278,7 @@ header .ap-icon-facebook {
   display: none;
   position: absolute;
   top: 20px;
-  //right:20px;
+  /* //right:20px; */
   left: 20px;
   font-size: 30px;
   color: #fff;
@@ -288,7 +288,7 @@ header .burger {
   width: 72px;
   height: 72px;
   top: 0;
-  //left:0;
+  /* //left:0; */
   right: 0;
   position: absolute;
   z-index: 999;
@@ -445,21 +445,21 @@ header .search span:nth-child(2) {
 }
 .row-table .table-cell h3 {
   font-size: 16px;
-  //margin:10px 0 3px;
-  margin: 0px 0 3px;
+  /* //margin:10px 0 3px; */
+  margin: 0px 0 0px;
 }
 .row-table .table-cell p {
   margin-bottom: 15px;
 }
-.row-table .table-cell.date {
+/* .row-table .table-cell.date { */
   /*width:49%;*/
-  //padding:15px 0 0 15px;
+  /* //padding:15px 0 0 15px; */
   /*white-space:nowrap*/
-}
+/* } */
 .row-table .table-cell.title {
   display: block;
   width: 100%;
-  //padding:0 30px 0 15px;
+  /* //padding:0 30px 0 15px; */
 }
 .row-table .table-cell.trainer {
   position: absolute;
@@ -605,25 +605,25 @@ header .search span:nth-child(2) {
     font-weight: 600;
   }
   .row-table .table-cell {
-    //vertical-align:middle;
+    /* //vertical-align:middle; */
     display: inline-block;
   }
-  .row-table .table-cell h3 {
-    //margin-top:20px;
-  }
+  /* .row-table .table-cell h3 { */
+    /* //margin-top:20px; */
+  /* } */
   .row-table .table-cell.date {
     width: 13.02%;
-    //padding:0 0 0 30px;
+    /* //padding:0 0 0 30px; */
     white-space: normal;
   }
   .row-table .table-cell.title {
     display: inline-block;
     width: 42.33%;
-    //padding:0
+    /* //padding:0 */
   }
   .row-table .table-cell.duration {
     width: 14.29%;
-    //padding-left:10px;
+    /* //padding-left:10px; */
   }
   .row-table .table-cell.more {
     padding-right: 15px;
@@ -712,7 +712,7 @@ header .search span:nth-child(2) {
   .row-table .table-cell.title {
     display: inline-block;
     width: 47.33%;
-    //padding:0
+    /* //padding:0 */
   }
   .row-table .table-cell.duration {
     width: 12.29%;
