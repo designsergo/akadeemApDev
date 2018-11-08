@@ -584,6 +584,8 @@ function searchTrainings(search, sort, order, skip) {
 
 }
 
+const numberOfTrainingsHolder = document.getElementById("number-of-trainings_holder");
+
 // search from array
 function searchTrainingsArray(sort, order, skip) {
 	searchField = $("#site-search").val().toUpperCase();
@@ -597,17 +599,9 @@ function searchTrainingsArray(sort, order, skip) {
 
 	dataLoaded = "searchTrainingsArray";
 
-	if (searchField.length === 0) {
-		document.getElementById("number-of-trainings_holder").classList.add("displayHider");
-	} else {
-		document.getElementById("number-of-trainings_holder").classList.remove("displayHider");
-	}
-
 	$(trainingsListFull).each(function (index) {
 		var item = $(this)[0];
 		var found = false;
-
-
 
 		if (0 < searchField.length) {
 			var itemName = item.Name.toUpperCase();
@@ -664,7 +658,10 @@ function searchTrainingsArray(sort, order, skip) {
 		}
 
 		if (found) {
+			numberOfTrainingsHolder.classList.remove("displayHider");
 			trainingsListFiltered.push(item);
+		} else {
+			numberOfTrainingsHolder.classList.add("displayHider");
 		}
 	});
 
