@@ -122,6 +122,7 @@ function initAboutGallery(action) {
 
 var startDate = false;
 var endDate = false;
+var siteSearchDateDelete = document.getElementById("site-search-date_delete");
 $(function () {
 	$('input[name="daterange"]').daterangepicker({
 		autoUpdateInput: false,
@@ -135,6 +136,7 @@ $(function () {
 		//console.log(picker.startDate, picker.endDate);
 		startDate = picker.startDate;
 		endDate = picker.endDate;
+		siteSearchDateDelete.classList.remove("displayHider");
 		searchTrainingsArray();
 	});
 
@@ -142,6 +144,7 @@ $(function () {
 		$(this).val('');
 		startDate = false;
 		endDate = false;
+		siteSearchDateDelete.classList.add("displayHider");
 		searchTrainingsArray();
 	});
 });
@@ -150,6 +153,7 @@ $("#site-search-date_delete").click(function () {
 	$('#site-search-date').val('');
 	startDate = false;
 	endDate = false;
+	siteSearchDateDelete.classList.add("displayHider");
 	searchTrainingsArray();
 });
 
@@ -593,7 +597,6 @@ function searchTrainingsArray(sort, order, skip) {
 	dataLoaded = "searchTrainingsArray";
 
 	if (searchField.length === 0) {
-		console.log('happens')
 		document.getElementById("number-of-trainings_holder").classList.add("displayHider");
 	} else {
 		document.getElementById("number-of-trainings_holder").classList.remove("displayHider");
