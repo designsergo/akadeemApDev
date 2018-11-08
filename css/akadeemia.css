@@ -627,6 +627,9 @@ input:focus::-webkit-input-placeholder {
   content:"\e904";
   color: #8a8a8a;
   -webkit-text-stroke: 1px white;
+  z-index:-100;
+  background-color:#fefefe;
+  
  }
  .site-search-hr {
    margin-top: 0px;
@@ -814,6 +817,8 @@ nav ul li:nth-last-child(2) {
     position: relative;
     top: 15px;
     right: 25px;
+    z-index:-100;
+    background-color:#fefefe;
   }
  }
 
@@ -880,6 +885,8 @@ nav ul li:nth-last-child(2) {
  .btn-site-search-span:before {
   padding: 6px 6px 6px 6px;
   box-shadow: 0 0 10px 0 rgba(138, 138, 138, 0.2);
+  z-index:-100;
+  background-color:#fefefe;
  }
 
  .form--sendMail {
