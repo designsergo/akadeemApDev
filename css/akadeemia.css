@@ -835,7 +835,7 @@ nav ul li:nth-last-child(2) {
  @media (max-width:427px){
   .site-search-date_holder {
     width:80%;
-    //margin-left:15%;
+    /* //margin-left:15%; */
     height: 100px;
     margin-bottom: -100px;
     position: relative;
@@ -847,7 +847,7 @@ nav ul li:nth-last-child(2) {
   .site-search-category_holder {
     height: 120px;
     text-align:left;
-    //margin-left:15%;
+    /* //margin-left:15%; */
     width:75%;
   } 
   .btn-site-search-span:before {
