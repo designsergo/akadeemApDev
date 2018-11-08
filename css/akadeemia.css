@@ -631,6 +631,8 @@ input:focus::-webkit-input-placeholder {
   content:"\e904";
   color: #8a8a8a;
   -webkit-text-stroke: 1px white;
+  Z-INDEX: -100;
+  background-color: #fefefe;
  }
  .site-search-hr {
    margin-top: 0px;
@@ -792,9 +794,15 @@ nav ul li:nth-last-child(2) {
 }
 
 .nr-of-trainings-message {
+<<<<<<< HEAD
   text-align:left;
   padding-top:5px;
   padding-bottom:5px;
+=======
+  text-align:center;
+  padding-top:30px;
+  padding-bottom:20px;
+>>>>>>> 6f707cfa7046964149c829198f4d25743d1ac2cf
   font-style:Roboto;
   font-weight:500;
 }
@@ -899,6 +907,7 @@ nav ul li:nth-last-child(2) {
  .btn-site-search-span:before {
   padding: 6px 6px 6px 6px;
   box-shadow: 0 0 10px 0 rgba(138, 138, 138, 0.2);
+  z-index:0;
  }
 
  .form--sendMail {
