@@ -16,15 +16,17 @@
         </p>
         <form class="form--newsletter" method="post" id="send-newsletter" data-subdomain="apakadeemia">
 
-        <input id="newsletter-name" type="text" class="input" placeholder="Nimi" name="newsletter-name" required>
+        <input id="newsletter-name" type="text" class="input" placeholder="Nimi" name="newsletter-name"  onblur="checkNameValidity()" required>
           <div id="newsletter-error" class="error"></div>
 
-          <hr class="modal-window-hr">
+          <hr class="modal-window-hr" id="newsletter-name-hr">
+          <div id="newsletter-name-error" class="error"></div>
 
           <input type="hidden" value="" name="secretkey">
-          <input id="newsletter-email" type="email" class="input" placeholder="E-post" name="newsletter-email" required>
+          <input id="newsletter-email" type="email" class="input" placeholder="E-post" name="newsletter-email" onblur="checkEmailValidity('newsletter-email')" required>
           
-        <hr class="modal-window-hr">
+        <hr class="modal-window-hr" id="newsletter-email-hr">
+          <div id="newsletter-email-error" class="error"></div>
           
      <input class="button button--sm" type="submit" value="LIITU UUDISKIRJAGA" name="Submit">
         </form>

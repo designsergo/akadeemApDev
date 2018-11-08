@@ -575,8 +575,8 @@ input:focus::-webkit-input-placeholder {
     color: #424242;
     border: 0;
     height:60px;
-    background-color: #FBFBFB;
-    box-shadow: 0 0 4px 1px rgba(233, 233, 233, 0.5);
+    background-color: #FEFEFE;
+    box-shadow: 0 2px 1px 0px rgba(138, 138, 138, 0.1);
  }
  .site-search::placeholder {
   font-weight: 300;
