@@ -122,6 +122,7 @@ function initAboutGallery(action) {
 
 var startDate = false;
 var endDate = false;
+var siteSearchDateDelete = document.getElementById("site-search-date_delete");
 $(function () {
 	$('input[name="daterange"]').daterangepicker({
 		autoUpdateInput: false,
@@ -135,6 +136,7 @@ $(function () {
 		//console.log(picker.startDate, picker.endDate);
 		startDate = picker.startDate;
 		endDate = picker.endDate;
+		siteSearchDateDelete.classList.remove("displayHider");
 		searchTrainingsArray();
 	});
 
@@ -142,6 +144,7 @@ $(function () {
 		$(this).val('');
 		startDate = false;
 		endDate = false;
+		siteSearchDateDelete.classList.add("displayHider");
 		searchTrainingsArray();
 	});
 });
@@ -150,6 +153,7 @@ $("#site-search-date_delete").click(function () {
 	$('#site-search-date').val('');
 	startDate = false;
 	endDate = false;
+	siteSearchDateDelete.classList.add("displayHider");
 	searchTrainingsArray();
 });
 
@@ -593,9 +597,17 @@ function searchTrainingsArray(sort, order, skip) {
 
 	dataLoaded = "searchTrainingsArray";
 
+	if (searchField.length === 0) {
+		document.getElementById("number-of-trainings_holder").classList.add("displayHider");
+	} else {
+		document.getElementById("number-of-trainings_holder").classList.remove("displayHider");
+	}
+
 	$(trainingsListFull).each(function (index) {
 		var item = $(this)[0];
 		var found = false;
+
+
 
 		if (0 < searchField.length) {
 			var itemName = item.Name.toUpperCase();
@@ -657,59 +669,60 @@ function searchTrainingsArray(sort, order, skip) {
 	});
 
 	trainingsListFiltered.sort(sortTrainingsByDateAsc);
-	console.log(trainingsListFiltered);
+	//console.log(trainingsListFiltered);
 	trainingsList = trainingsListFiltered; // for use in sorting
 	showTrainings(trainingsListFiltered);
 }
 
 function showTrainings(trainingsList) {
-	$('#trainings-table .placeholder, #trainings-table .table-row, #trainings-table .table-footer, #trainings-table .no-trainings-message').remove();
+	$('#trainings-table .placeholder, #trainings-table .table-row, #trainings-table .table-footer, #number-of-trainings_holder .nr-of-trainings-message').remove();
 
-	if (trainingsList.length > 0) {
+	// if (trainingsList.length > 0) {
+	let nr_message = '<p class="nr-of-trainings-message">Otsingu tulemusi kokku: ' + trainingsList.length + '</p>';
+	$('#number-of-trainings_holder').append(nr_message);
 
-		$(trainingsList).each(function (index) {
-			var item = $(this)[0];
-			var category = '<div class="product-categories"> <span class="product-categories-title">KATEGOORIA: </span>';
-			if (item.ProductCategories) {
-				for (var count = 0; count < item.ProductCategories.length; count++) {
-					category += item.ProductCategories[count] + ', ';
-				}
-				if (item.ProductCategories.length > 0) {
-					category = category.substring(0, category.length - 2);
-				}
+	$(trainingsList).each(function (index) {
+		var item = $(this)[0];
+		var category = '<div class="product-categories"> <span class="product-categories-title">KATEGOORIA: </span>';
+		if (item.ProductCategories) {
+			for (var count = 0; count < item.ProductCategories.length; count++) {
+				category += item.ProductCategories[count] + ', ';
 			}
-			category += '</div>';
+			if (item.ProductCategories.length > 0) {
+				category = category.substring(0, category.length - 2);
+			}
+		}
+		category += '</div>';
 
-			let template = '<div class="table-row table-row-open" id="table-row-' + item.Id + '" id-nr="' + item.Id + '">' +
-				'' +
-				'<div class="table-cell date">' + item.date + '</div>' +
-				'<div class="table-cell title"><h3>' + item.Name + '</h3><p>' + item.subtitle + '</p></div>' +
-				'<div class="table-cell duration hidden-xs">' + item.duration + '</div>' +
-				'<div class="table-cell trainer hidden-xs">' + item.trainer + '</div>' +
-				'<div class="table-cell more"><span class="text hidden-xs"></span>' +
-				'<span class="ap-table-order hidden" id="ap-table-order-' + item.Id + '"></span><span class="ap-table-order-asc" id="ap-table-order-asc-' + item.Id + '"></span></div>' +
-				'<div class="table-cell short-description hidden" id="short-description-' + item.Id + '">' + item.ShortDescription +
-				category +
-				'<div> <a class="button register" href="http://pood.aripaev.ee/Product/ProductDetails?productId=' + item.Id + '#registreerimine" target="_blank">Registreeru</a>' +
-				'<a class="button info" href="http://pood.aripaev.ee/Product/ProductDetails?productId=' + item.Id + '" target="_blank">Lisainfo</a>' +
-				'</div>' +
-				'</div>' +
-				'' +
-				'</div>';
-
-
-			//<a href="http://pood.aripaev.ee/Product/ProductDetails?productId='+item.Id+'" target="_blank">
-			//</a>
-
-			$('#trainings-table .items').append(template);
+		let template = '<div class="table-row table-row-open" id="table-row-' + item.Id + '" id-nr="' + item.Id + '">' +
+			'' +
+			'<div class="table-cell date">' + item.date + '</div>' +
+			'<div class="table-cell title"><h3>' + item.Name + '</h3><p>' + item.subtitle + '</p></div>' +
+			'<div class="table-cell duration hidden-xs">' + item.duration + '</div>' +
+			'<div class="table-cell trainer hidden-xs">' + item.trainer + '</div>' +
+			'<div class="table-cell more"><span class="text hidden-xs"></span>' +
+			'<span class="ap-table-order hidden" id="ap-table-order-' + item.Id + '"></span><span class="ap-table-order-asc" id="ap-table-order-asc-' + item.Id + '"></span></div>' +
+			'<div class="table-cell short-description hidden" id="short-description-' + item.Id + '">' + item.ShortDescription +
+			category +
+			'<div> <a class="button register" href="http://pood.aripaev.ee/Product/ProductDetails?productId=' + item.Id + '#registreerimine" target="_blank">Registreeru</a>' +
+			'<a class="button info" href="http://pood.aripaev.ee/Product/ProductDetails?productId=' + item.Id + '" target="_blank">Lisainfo</a>' +
+			'</div>' +
+			'</div>' +
+			'' +
+			'</div>';
 
 
-		});
+		//<a href="http://pood.aripaev.ee/Product/ProductDetails?productId='+item.Id+'" target="_blank">
+		//</a>
 
-	} else {
-		let template = '<p class="no-trainings-message">Selliseid koolitusi pole</p>';
 		$('#trainings-table .items').append(template);
-	}
+
+
+	});
+
+	// } else {
+
+	// }
 
 	// row click bind
 	$('#trainings-table .table-row-open').click(function (e) {
