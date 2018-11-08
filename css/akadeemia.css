@@ -794,15 +794,9 @@ nav ul li:nth-last-child(2) {
 }
 
 .nr-of-trainings-message {
-<<<<<<< HEAD
   text-align:left;
   padding-top:5px;
   padding-bottom:5px;
-=======
-  text-align:center;
-  padding-top:30px;
-  padding-bottom:20px;
->>>>>>> 6f707cfa7046964149c829198f4d25743d1ac2cf
   font-style:Roboto;
   font-weight:500;
 }
