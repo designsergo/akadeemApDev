@@ -36,16 +36,19 @@
 				<!--<input type="submit" class="btn-site-search" value="Otsi">-->
 				
 				
-				<div class="site-search-category_holder" id="site-search-category_holder">
-					<select name="site-search-category" class="site-search-category" id="site-search-category">
-						<option value="-">Vali kategooria</option>
-					</select>
-				</div>
-				<div class="site-search-date_holder" id="site-search-date_holder">
-					<input type="text" name="daterange" class="site-search-date"
-						id="site-search-date" value="" placeholder="Vali ajavahemik" readonly />
-					<span class="site-search-date_delete" id="site-search-date_delete"> x </span>
-				</div>
+			<div class="site-search-category_holder" id="site-search-category_holder">
+				<select name="site-search-category" class="site-search-category" id="site-search-category">
+					<option value="-">Vali kategooria</option>
+				</select>
+			</div>
+			<div class="site-search-date_holder" id="site-search-date_holder">
+				<input type="text" name="daterange" class="site-search-date"
+					id="site-search-date" value="" placeholder="Vali ajavahemik" readonly />
+				<span class="site-search-date_delete" id="site-search-date_delete"> x </span>
+			</div>
+
+			<div class='number-of-trainings_holder' id ='number-of-trainings_holder' ></div>
+
 		</div>
 	</div>
 

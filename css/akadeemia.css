@@ -23,6 +23,10 @@
   font-size:16px;
 }
 
+.displayHider {
+  display: none;
+}
+
 @media (max-width:768px) {
   #footer-text a {
     font-size:14px;
@@ -787,10 +791,10 @@ nav ul li:nth-last-child(2) {
   margin-top:60px;
 }
 
-.no-trainings-message {
-  text-align:center;
-  padding-top:30px;
-  padding-bottom:20px;
+.nr-of-trainings-message {
+  text-align:left;
+  padding-top:5px;
+  padding-bottom:5px;
   font-style:Roboto;
   font-weight:500;
 }
@@ -1325,7 +1329,9 @@ nav ul li:nth-last-child(2) {
   header h1.indent {
     /*text-indent:0;*/
     /*background:url(/wp-content/themes/Akadeemia/img/logo_akadeemia_mobile.png) 20px 10px/contain no-repeat;*/
-    background:url(/wp-content/themes/Akadeemia/img/logo_akadeemia_mobile.png) 0px 0px/contain no-repeat;    
+    background:url(/wp-content/themes/Akadeemia/img/logo_akadeemia_mobile.png);
+    background-repeat: no-repeat;
+    background-size: 240px 45px;
     margin-left: 7px;
 
   }
@@ -1814,7 +1820,7 @@ footer,footer a{
        display: none;
      }
      .site-search {
-        width: 100%%;
+        width: 100%;
      }
      .site-search-hr {
        width: 95%;
