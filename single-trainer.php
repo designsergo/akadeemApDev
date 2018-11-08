@@ -126,9 +126,10 @@
 					</p>';
 					echo '<form class="form--sendMail" method="post" id="send-mail" >
 						<input id="sendmail-email" type="email" class="input"
-							placeholder="Sinu e-post" name="newsletter-email" required>
-						<hr class="sendmail-hr">
+							placeholder="Sinu e-post" name="newsletter-email" onblur="checkEmailValidity(\'sendmail-email\')" required>
+						<hr class="sendmail-hr"  id="newsletter-email-hr">
 						<div id="sendmail-error" class="sendmail-error"></div>
+						<div id="newsletter-email-error" class="error"></div>
 						<input class="button button--sm" type="submit" value="SOOVIN LISAINFOT" name="Submit">
 					</form>';
 

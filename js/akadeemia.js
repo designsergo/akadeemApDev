@@ -215,7 +215,7 @@ function loadTrainings(sort, order, skip) {
 
 	$.ajax({
 		method: 'GET',
-		timeout: 15000,
+		timeout: 155000,
 		url: queryUrl
 	}).fail(function (error) {
 		console.log('loadTrainings: ERROR contacting poodapi.aripaev.ee!', error);
@@ -1357,3 +1357,57 @@ function getUrlParameter(param) {
 	}
 	return "";
 }
+
+//NEWSLETTER VALIDITY
+function checkEmailValidity(email) {
+	console.log('this happens')
+	console.log(email)
+	const newletterEmail = document.getElementById(email);
+	let errorMessage;
+	if (email === "newsletter-email") {
+		errorMessage = '<span class="newsletterEmailError">Uudiskirjaga liitumiseks sisesta korrektne e-posti aadress</span>'
+	}
+	if (email === "sendmail-email") {
+		errorMessage = '<span class="newsletterEmailError">Lisainfo tellimiseks sisesta korrektne e-posti aadress</span>'
+	}
+	const emailHr = document.getElementById('newsletter-email-hr');
+
+	if (newletterEmail.validity.typeMismatch || newletterEmail.validity.valueMissing) {
+		// newletterEmail.setCustomValidity("I expect an e-mail, darling!");
+		$('#newsletter-email-error .newsletterEmailError').remove();
+		$('#newsletter-email-error').append(errorMessage);
+		emailHr.style.borderColor = "red";
+	} else {
+		// newletterEmail.setCustomValidity("");
+		$('#newsletter-email-error .newsletterEmailError').remove();
+		emailHr.style.borderColor = "#eee";
+	}
+	newletterEmail.addEventListener("input", function () {
+		if (!newletterEmail.validity.typeMismatch || newletterEmail.validity.valueMissing) {
+			$('#newsletter-email-error .newsletterEmailError').remove();
+			emailHr.style.borderColor = "#eee";
+		}
+	})
+}
+
+function checkNameValidity() {
+	const newletterName = document.getElementById("newsletter-name");
+	const errorMessage = '<span class="newsletterNameError">Uudiskirjaga liitumiseks sisesta nimi</span>'
+	const namelHr = document.getElementById('newsletter-name-hr');
+
+	if (newletterName.validity.valueMissing) {
+		$('#newsletter-name-error .newsletterNameError').remove();
+		$('#newsletter-name-error').append(errorMessage);
+		namelHr.style.borderColor = "red";
+	} else {
+		$('#newsletter-name-error .newsletterNameError').remove();
+		namelHr.style.borderColor = "#eee";
+	}
+	newletterName.addEventListener("input", function () {
+		if (!newletterName.validity.valueMissing) {
+			$('#newsletter-name-error .newsletterNameError').remove();
+			namelHr.style.borderColor = "#eee";
+		}
+	})
+}
+
