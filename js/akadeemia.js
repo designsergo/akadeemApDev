@@ -674,7 +674,7 @@ function showTrainings(trainingsList) {
 	$('#trainings-table .placeholder, #trainings-table .table-row, #trainings-table .table-footer, #number-of-trainings_holder .nr-of-trainings-message').remove();
 
 	// if (trainingsList.length > 0) {
-	let nr_message = '<p class="nr-of-trainings-message">Selliseid koolitusi on ' + trainingsList.length + '</p>';
+	let nr_message = '<p class="nr-of-trainings-message">Otsingu tulemusi kokku: ' + trainingsList.length + '</p>';
 	$('#number-of-trainings_holder').append(nr_message);
 
 	$(trainingsList).each(function (index) {
