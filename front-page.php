@@ -47,7 +47,7 @@
 				<span class="site-search-date_delete displayHider" id="site-search-date_delete"> x </span>
 			</div>
 
-			<div class='number-of-trainings_holder' id ='number-of-trainings_holder' ></div>
+			<div class='number-of-trainings_holder displayHider' id ='number-of-trainings_holder' ></div>
 
 		</div>
 	</div>
