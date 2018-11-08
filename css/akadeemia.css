@@ -726,7 +726,7 @@ input:focus::-webkit-input-placeholder {
 .site-search-date_delete {
   cursor: pointer;
   position: relative;
-  right: 25px;
+  right: 28px;
 }
 
 .form--sendMail {
@@ -928,7 +928,7 @@ nav ul li:nth-last-child(2) {
 }
 
 .row-table .table-row .table-cell.more {
-  padding-top:32px;
+  padding-top: 1.5em;
 }
 
 .row-intro p {
