@@ -153,6 +153,7 @@ $("#site-search-date_delete").click(function () {
 	searchTrainingsArray();
 });
 
+
 //$('#site-search-date').on('input', function() {
 //    alert( "Handler for input() called." );
 //});
