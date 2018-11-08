@@ -1546,11 +1546,11 @@ nav ul li:nth-last-child(2) {
   .row-internal-schooling .bg{height:270px;margin-top:130px}
 
   .site-search-category{
-    width: 95%;
+    width: 190px;
   }
 
   .site-search-date {
-    width: 85%;
+    width: 200px;
     font-size: 13px;
   }
   .site-search-date::placeholder{
