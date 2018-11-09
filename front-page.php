@@ -44,7 +44,7 @@
 			<div class="site-search-date_holder" id="site-search-date_holder">
 				<input type="text" name="daterange" class="site-search-date"
 					id="site-search-date" value="" placeholder="Vali ajavahemik" readonly />
-				<span class="site-search-date_delete displayHider" id="site-search-date_delete"> x </span>
+				<span class="site-search-date_delete displayHider ap-icon-delete" id="site-search-date_delete"></span>
 			</div>
 
 			<div class='number-of-trainings_holder displayHider' id ='number-of-trainings_holder' ></div>
