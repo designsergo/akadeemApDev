@@ -146,9 +146,6 @@
 
 		$wpdb->flush();
 	?>
-<div class="info"><div id="trainer-footer"></div></div>
+<div class="info"><div id="trainer-footer"><?php get_footer(); ?></div></div>
 
 </div>
-
-
-<?php get_footer(); ?>

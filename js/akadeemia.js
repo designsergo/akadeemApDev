@@ -122,7 +122,16 @@ function initAboutGallery(action) {
 
 var startDate = false;
 var endDate = false;
-var siteSearchDateDelete = document.getElementById("site-search-date_delete");
+
+const siteSearchDateDelete = document.getElementById("site-search-date_delete");
+
+function reveal(element) {
+	element.classList.remove("displayHider");
+}
+function conceal(element) {
+	element.classList.add("displayHider");
+}
+
 $(function () {
 	$('input[name="daterange"]').daterangepicker({
 		autoUpdateInput: false,
@@ -136,7 +145,7 @@ $(function () {
 		//console.log(picker.startDate, picker.endDate);
 		startDate = picker.startDate;
 		endDate = picker.endDate;
-		siteSearchDateDelete.classList.remove("displayHider");
+		reveal(siteSearchDateDelete);
 		searchTrainingsArray();
 	});
 
@@ -144,7 +153,7 @@ $(function () {
 		$(this).val('');
 		startDate = false;
 		endDate = false;
-		siteSearchDateDelete.classList.add("displayHider");
+		conceal(siteSearchDateDelete);
 		searchTrainingsArray();
 	});
 });
@@ -153,7 +162,7 @@ $("#site-search-date_delete").click(function () {
 	$('#site-search-date').val('');
 	startDate = false;
 	endDate = false;
-	siteSearchDateDelete.classList.add("displayHider");
+	conceal(siteSearchDateDelete);
 	searchTrainingsArray();
 });
 
@@ -604,6 +613,7 @@ function searchTrainingsArray(sort, order, skip) {
 		var found = false;
 
 		if (0 < searchField.length) {
+			reveal(numberOfTrainingsHolder);
 			var itemName = item.Name.toUpperCase();
 			var itemSubtitle = item.subtitle.toUpperCase();
 			var shortDescription = null == item.ShortDescription ? '' : item.ShortDescription.toUpperCase();
@@ -632,15 +642,20 @@ function searchTrainingsArray(sort, order, skip) {
 
 		}
 		else {
+			conceal(numberOfTrainingsHolder);
 			// search field is empty
 			if ('-' != searchCategory) {
+				reveal(numberOfTrainingsHolder);
 				if (0 <= item.ProductCategories.indexOf(searchCategory)) {
 					found = true;
 				}
+			} else {
+				conceal(numberOfTrainingsHolder);
 			}
 		}
 
 		if (false != startDate && false != endDate) {
+			reveal(numberOfTrainingsHolder);
 			if (item.startDate > startDate && item.startDate < endDate) {
 				if (0 == searchField.length && '-' == searchCategory) {
 					found = true;
@@ -658,10 +673,7 @@ function searchTrainingsArray(sort, order, skip) {
 		}
 
 		if (found) {
-			numberOfTrainingsHolder.classList.remove("displayHider");
 			trainingsListFiltered.push(item);
-		} else {
-			numberOfTrainingsHolder.classList.add("displayHider");
 		}
 	});
 
