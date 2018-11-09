@@ -39,7 +39,7 @@
 						'items_wrap' => '%3$s')
 					);
 
-          echo '<li><a href="#" class="menu-newsletter">Uudiskiri</a></li>';
+			echo '<li><a href="#" class="menu-newsletter">Uudiskiri</a></li>';
 				?>
 				</ul>
 			</nav>
