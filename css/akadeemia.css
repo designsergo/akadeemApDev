@@ -29,7 +29,7 @@
 
 .ap-icon-delete:before{
   content:"\e906";
-  font-size: 16px;
+  font-size: 1em;
   color: #8a8a8a;
   position:relative;
   top:2px;
@@ -88,17 +88,24 @@
    .container{width:1010px}
  } */
  @media (min-width:1200px){
-  .row-intro p{text-align:center;margin: 0px 150px 0px 150px}
+  .row-intro p{text-align:center;margin: 0px 20px 0px 20px}
  .container{width:90%; margin-left:10%; margin-right:10%}
-
 }
 @media (max-width:1650px){
  .container{width:85%; margin-left:10%; margin-right:10%}
-}
- 
+} 
 @media (max-width:998px){
  .container{width:90%; margin-left:12%; margin-right:12%}
 }
+@media (min-width:992px) and (max-width:1000px){ 
+  .container{
+    margin-right:20%;
+    padding-right: 80px;
+}
+ }
+ @media (max-width:992px){ 
+  .container{margin-right:10%}
+ }
 @media (max-width: 768px){
   .container {
     width: 100%;
@@ -140,7 +147,7 @@
   .col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-7{margin-left:58.33333333%}
   .col-sm-offset-6{margin-left:50%}.col-sm-offset-5{margin-left:41.66666667%}
   .col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-3{margin-left:25%}
-  .col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-1{margin-left:100px; margin-right:100px}
+  .col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-1{margin-left:100px; margin-right:50px}
   .col-sm-offset-0{margin-left:0}
 }
 
@@ -719,7 +726,7 @@ input:focus::-webkit-input-placeholder {
   margin: 0px 10px 65px 0px;
   text-align: center;
   font-family: Roboto;
-  padding-right:10px;
+  padding-right:11px;
 }
 .site-search-date::placeholder{
   font-size:14px;
@@ -727,9 +734,12 @@ input:focus::-webkit-input-placeholder {
   font-style: normal;
   padding-left: 20px;
   background: url(../img/calendar.png) no-repeat left center;
+  background-size:22px 22px;
   text-align:center;
   color:#424242;
   padding-left:20px;
+  position:relative;
+  left:5px;
 }
 
 .site-search-category_holder select{
@@ -809,7 +819,7 @@ input:focus::-webkit-input-placeholder {
 }
 
 nav ul li:nth-last-child(2) {
-  margin-top:60px;
+  margin-top:35px;
 }
 
 .nr-of-trainings-message {
@@ -866,7 +876,17 @@ nav ul li:nth-last-child(2) {
     top: 15px;
   }
  }
- @media (max-width:428px){
+ @media (max-width:428px){  
+  .site-search-category{
+    padding-left:30px;
+    font-family: Roboto;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../img/down-arrow.png) no-repeat left center;
+    position:relative;
+    left:2px;
+  }
   .site-search-date_holder {
     width:100%;
     height: 115px;
@@ -916,6 +936,13 @@ nav ul li:nth-last-child(2) {
  }
 
  @media (max-width:768px){
+
+  .number-of-trainings_holder {
+    position:relative;
+    bottom:12px;
+    margin-bottom:-10px;
+  }
+
   .site-search-date_delete {
     right:25px;
   }
@@ -1298,7 +1325,7 @@ nav ul li:nth-last-child(2) {
 
  @media (max-width: 768px) {
   header .ap-icon-facebook{
-    top:460px;
+    top: 515px;
   }
  }
  .row-intro{
@@ -1978,9 +2005,26 @@ footer,footer a{
    .row-trainers-details .upcoming-box .upcoming .event{margin-bottom:15px}
    footer .col-md-offset-1{margin-left:0}
 }
+
+@media (max-width:359px) {
+  .row-table .table-cell.short-description .info {
+    margin-left: 0px !important;
+  }
+}
  @media (min-width:768px) and (max-width:769px)
- {
-   .row-intro h2,.row-intro p{padding-left:100px}
+ {   
+  .container {margin-left:80px; padding-right:50px;}
+  .short-description{
+    position:relative;
+    right: 155px;
+  }
+  .modal {
+    width:730px;
+    padding-left:40px;
+  }
+  .modal-body {
+    width:690px;
+  }
    header .bg-slant{top:-842px}.search-header{right:24px}
    .row-intro{margin-bottom:70px}
    .row-intro h2{font-size:27px}
@@ -2122,7 +2166,7 @@ footer,footer a{
     margin-right:8px;
   }
   .row-table .table-cell.short-description .info {
-    margin-left:8px;
+    margin-left:6px;
     margin-right:8px;
   }
   .col-lg-9,

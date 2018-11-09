@@ -29,7 +29,8 @@
 			<div class="input-group">
 			<input type="search" id="site-search" name="site-search" class="site-search"
                placeholder="Otsi koolitusi, koolitajaid või koolitusteemasid"
-               aria-label="Otsi koolitusi, koolitajaid või koolitusteemasid">
+			   aria-label="Otsi koolitusi, koolitajaid või koolitusteemasid"
+			   onkeyup="searchTrainingsArray()">
 				<div class="input-group-addon"><span class="btn-site-search-span"></span></div>
 			</div>
 				

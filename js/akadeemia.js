@@ -895,10 +895,6 @@ $("#site-search").enterKey(function () {
 
 })
 
-document.getElementById('site-search').onkeyup = function () {
-	searchTrainingsArray();
-}
-
 $('.btn-site-search-span').click(function () {
 	//searchTrainings($("#site-search").val());
 	searchTrainingsArray();
@@ -1019,6 +1015,7 @@ var sendsmaily = {
 
 /*** NEWSLETTER ***/
 $('.menu-newsletter').click(function (e) {
+	console.log('this hapens');
 	e.preventDefault();
 	$("#modal-newsletter").modal('show');
 });
